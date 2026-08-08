@@ -1,0 +1,21 @@
+machine_key,machine_id,machine_type,production_line,manufacturer,install_year,maintenance_interval_hrs,status
+CNC_Mill_A1,CNC_Mill_A1,CNC Mill,Line_A,DMG MORI,2020,500,Active
+Injection_Molder_A2,Injection_Molder_A2,Injection Molder,Line_A,ARBURG,2019,400,Active
+Assembly_Robot_A3,Assembly_Robot_A3,Assembly Robot,Line_A,FANUC,2021,1000,Active
+Quality_Scanner_A4,Quality_Scanner_A4,Quality Scanner,Line_A,Keyence,2022,2000,Active
+CNC_Mill_B1,CNC_Mill_B1,CNC Mill,Line_B,DMG MORI,2020,500,Active
+Injection_Molder_B2,Injection_Molder_B2,Injection Molder,Line_B,ARBURG,2019,400,Active
+Assembly_Robot_B3,Assembly_Robot_B3,Assembly Robot,Line_B,FANUC,2021,1000,Active
+Quality_Scanner_B4,Quality_Scanner_B4,Quality Scanner,Line_B,Keyence,2022,2000,Active
+CNC_Mill_C1,CNC_Mill_C1,CNC Mill,Line_C,DMG MORI,2020,500,Active
+Injection_Molder_C2,Injection_Molder_C2,Injection Molder,Line_C,ARBURG,2019,400,Active
+Assembly_Robot_C3,Assembly_Robot_C3,Assembly Robot,Line_C,FANUC,2021,1000,Active
+Quality_Scanner_C4,Quality_Scanner_C4,Quality Scanner,Line_C,Keyence,2022,2000,Active
+CNC_Mill_D1,CNC_Mill_D1,CNC Mill,Line_D,DMG MORI,2020,500,Active
+Laser_Cutter_D2,Laser_Cutter_D2,Laser Cutter,Line_D,TRUMPF,2021,600,Active
+Welding_Robot_D3,Welding_Robot_D3,Welding Robot,Line_D,ABB,2020,800,Active
+Quality_Scanner_D4,Quality_Scanner_D4,Quality Scanner,Line_D,Keyence,2022,2000,Active
+CNC_Mill_E1,CNC_Mill_E1,CNC Mill,Line_E,DMG MORI,2020,500,Active
+Laser_Cutter_E2,Laser_Cutter_E2,Laser Cutter,Line_E,TRUMPF,2021,600,Active
+Assembly_Robot_E3,Assembly_Robot_E3,Assembly Robot,Line_E,FANUC,2021,1000,Active
+Packaging_Unit_E4,Packaging_Unit_E4,Packaging Unit,Line_E,Bosch Rexroth,2022,1500,Active

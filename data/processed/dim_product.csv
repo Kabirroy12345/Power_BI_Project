@@ -1,0 +1,9 @@
+product_key,product_id,product_name,product_category,target_cycle_time_sec,unit_cost_usd
+PRD-002,PRD-002,HVAC Control Module,Building Tech,30,89.5
+PRD-005,PRD-005,Thermostat Controller,Building Tech,35,78.0
+PRD-004,PRD-004,Gas Detection Sensor,Safety,25,155.0
+PRD-007,PRD-007,Industrial PLC Board,Industrial,40,195.0
+PRD-001,PRD-001,Turbo Actuator Valve,Aerospace,45,245.0
+PRD-008,PRD-008,Fire Alarm Module,Safety,15,45.0
+PRD-003,PRD-003,Pressure Sensor Unit,Industrial,20,62.0
+PRD-006,PRD-006,Fuel Nozzle Assembly,Aerospace,50,320.0

@@ -1,0 +1,11 @@
+operator_key,operator_id,operator_name,experience_level,is_certified,hire_year
+OP-001,OP-001,Rajesh Kumar,Senior,1,2018
+OP-004,OP-004,Neha Gupta,Mid,1,2019
+OP-003,OP-003,Amit Patel,Mid,1,2020
+OP-009,OP-009,Arjun Nair,Junior,0,2024
+OP-010,OP-010,Kavita Joshi,Mid,1,2019
+OP-002,OP-002,Priya Sharma,Senior,1,2017
+OP-007,OP-007,Rahul Verma,Senior,1,2016
+OP-005,OP-005,Vikram Singh,Junior,0,2023
+OP-006,OP-006,Ananya Das,Junior,0,2023
+OP-008,OP-008,Sneha Reddy,Mid,1,2020

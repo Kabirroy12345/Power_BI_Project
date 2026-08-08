@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Power BI temp files
+*.pbit
+*.pbix.tmp
+
+# Large data files (keep CSVs under 100MB for GitHub)
+# data/raw/*.csv  — uncomment if raw data exceeds GitHub limits
