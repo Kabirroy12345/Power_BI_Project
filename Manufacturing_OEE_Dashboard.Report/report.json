@@ -1,5 +1,6 @@
 {
   "id": 0,
+  "theme": "HoneywellIndustrialDark.json",
   "resourcePackages": [
     {
       "resourcePackage": {
@@ -20,6 +21,11 @@
         "name": "RegisteredResources",
         "type": 1,
         "items": [
+          {
+            "type": 201,
+            "path": "HoneywellIndustrialDark.json",
+            "name": "HoneywellIndustrialDark.json"
+          },
           {
             "type": 100,
             "path": "main_dashboard.png",
@@ -59,129 +65,138 @@
     {
       "id": 0,
       "name": "f045d8df6a45c261c601",
-      "displayName": "1. Live Interactive OEE Studio",
+      "displayName": "1. Executive OEE Studio (Live)",
       "filters": "[]",
       "ordinal": 0,
       "visualContainers": [
         {
           "x": 20,
-          "y": 20,
+          "y": 12,
           "z": 100,
-          "width": 295,
-          "height": 135,
-          "config": "{\"name\": \"vc_card_oee\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 100, \"width\": 295, \"height\": 135, \"tabOrder\": 100}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.OEE\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}, \"Name\": \"_Measures.OEE\", \"NativeReferenceName\": \"OEE\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "width": 1880,
+          "height": 50,
+          "config": "{\"name\": \"vc_p1_banner\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 12, \"z\": 100, \"width\": 1880, \"height\": 50, \"tabOrder\": 100}}], \"singleVisual\": {\"visualType\": \"textbox\", \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"HONEYWELL INDUSTRIAL AUTOMATION \\u2014 EXECUTIVE OEE & PRODUCTION STUDIO   \", \"textStyle\": {\"fontWeight\": \"bold\", \"fontFamily\": \"Segoe UI\", \"fontSize\": \"14pt\", \"color\": \"#38BDF8\"}}, {\"value\": \"145,728 Hourly Records  |  20 Machines  |  5 Production Lines  |  8 Product SKUs  |  World-Class Target: 85.0% OEE\", \"textStyle\": {\"fontFamily\": \"Segoe UI\", \"fontSize\": \"10.5pt\", \"color\": \"#CBD5E1\"}}]}]}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#0F172A\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#38BDF8\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
           "filters": "[]"
         },
         {
-          "x": 330,
-          "y": 20,
+          "x": 20,
+          "y": 72,
           "z": 200,
-          "width": 295,
-          "height": 135,
-          "config": "{\"name\": \"vc_card_avail\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 330, \"y\": 20, \"z\": 200, \"width\": 295, \"height\": 135, \"tabOrder\": 200}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Availability\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Availability\"}, \"Name\": \"_Measures.Availability\", \"NativeReferenceName\": \"Availability\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "width": 298,
+          "height": 120,
+          "config": "{\"name\": \"vc_p1_c1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 72, \"z\": 200, \"width\": 298, \"height\": 120, \"tabOrder\": 200}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.OEE\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}, \"Name\": \"_Measures.OEE\", \"NativeReferenceName\": \"Overall OEE (Target 85%)\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#38BDF8\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#38BDF8\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
           "filters": "[]"
         },
         {
-          "x": 640,
-          "y": 20,
+          "x": 332,
+          "y": 72,
           "z": 300,
-          "width": 295,
-          "height": 135,
-          "config": "{\"name\": \"vc_card_perf\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 640, \"y\": 20, \"z\": 300, \"width\": 295, \"height\": 135, \"tabOrder\": 300}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Performance Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Performance Rate\"}, \"Name\": \"_Measures.Performance Rate\", \"NativeReferenceName\": \"Performance Rate\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "width": 298,
+          "height": 120,
+          "config": "{\"name\": \"vc_p1_c2\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 332, \"y\": 72, \"z\": 300, \"width\": 298, \"height\": 120, \"tabOrder\": 300}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Availability\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Availability\"}, \"Name\": \"_Measures.Availability\", \"NativeReferenceName\": \"Availability (Target 90%)\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#10B981\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#10B981\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
           "filters": "[]"
         },
         {
-          "x": 950,
-          "y": 20,
+          "x": 644,
+          "y": 72,
           "z": 400,
-          "width": 295,
-          "height": 135,
-          "config": "{\"name\": \"vc_card_qual\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 950, \"y\": 20, \"z\": 400, \"width\": 295, \"height\": 135, \"tabOrder\": 400}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Quality Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Quality Rate\"}, \"Name\": \"_Measures.Quality Rate\", \"NativeReferenceName\": \"Quality Rate\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "width": 298,
+          "height": 120,
+          "config": "{\"name\": \"vc_p1_c3\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 644, \"y\": 72, \"z\": 400, \"width\": 298, \"height\": 120, \"tabOrder\": 400}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Performance Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Performance Rate\"}, \"Name\": \"_Measures.Performance Rate\", \"NativeReferenceName\": \"Performance Rate (Target 95%)\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#F59E0B\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#F59E0B\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
           "filters": "[]"
         },
         {
-          "x": 1260,
-          "y": 20,
+          "x": 956,
+          "y": 72,
           "z": 500,
-          "width": 310,
-          "height": 135,
-          "config": "{\"name\": \"vc_card_units\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1260, \"y\": 20, \"z\": 500, \"width\": 310, \"height\": 135, \"tabOrder\": 500}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Good Units\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Good Units\"}, \"Name\": \"_Measures.Good Units\", \"NativeReferenceName\": \"Good Units\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "width": 298,
+          "height": 120,
+          "config": "{\"name\": \"vc_p1_c4\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 956, \"y\": 72, \"z\": 500, \"width\": 298, \"height\": 120, \"tabOrder\": 500}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Quality Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Quality Rate\"}, \"Name\": \"_Measures.Quality Rate\", \"NativeReferenceName\": \"Quality / First-Pass Yield\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#A855F7\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#A855F7\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
           "filters": "[]"
         },
         {
-          "x": 1585,
-          "y": 20,
+          "x": 1268,
+          "y": 72,
           "z": 600,
-          "width": 315,
-          "height": 135,
-          "config": "{\"name\": \"vc_card_val\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1585, \"y\": 20, \"z\": 600, \"width\": 315, \"height\": 135, \"tabOrder\": 600}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Production Value\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Production Value\"}, \"Name\": \"_Measures.Production Value\", \"NativeReferenceName\": \"Production Value\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "width": 305,
+          "height": 120,
+          "config": "{\"name\": \"vc_p1_c5\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1268, \"y\": 72, \"z\": 600, \"width\": 305, \"height\": 120, \"tabOrder\": 600}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Good Units\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Good Units\"}, \"Name\": \"_Measures.Good Units\", \"NativeReferenceName\": \"Good Units Produced\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#38BDF8\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#38BDF8\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
           "filters": "[]"
         },
         {
-          "x": 20,
-          "y": 170,
+          "x": 1587,
+          "y": 72,
           "z": 700,
-          "width": 295,
-          "height": 280,
-          "config": "{\"name\": \"vc_sl_line\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 170, \"z\": 700, \"width\": 295, \"height\": 280, \"tabOrder\": 700}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_machine.production_line\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"dim_machine\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"production_line\"}, \"Name\": \"dim_machine.production_line\", \"NativeReferenceName\": \"production_line\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Basic'\"}}}}}]}}}",
+          "width": 313,
+          "height": 120,
+          "config": "{\"name\": \"vc_p1_c6\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1587, \"y\": 72, \"z\": 700, \"width\": 313, \"height\": 120, \"tabOrder\": 700}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Production Value\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Production Value\"}, \"Name\": \"_Measures.Production Value\", \"NativeReferenceName\": \"Production Value ($ USD)\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#10B981\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#10B981\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
           "filters": "[]"
         },
         {
           "x": 20,
-          "y": 465,
+          "y": 204,
           "z": 800,
-          "width": 295,
-          "height": 250,
-          "config": "{\"name\": \"vc_sl_shift\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 465, \"z\": 800, \"width\": 295, \"height\": 250, \"tabOrder\": 800}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_shift.shift_name\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"dim_shift\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"shift_name\"}, \"Name\": \"dim_shift.shift_name\", \"NativeReferenceName\": \"shift_name\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Basic'\"}}}}}]}}}",
+          "width": 280,
+          "height": 280,
+          "config": "{\"name\": \"vc_p1_s1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 204, \"z\": 800, \"width\": 280, \"height\": 280, \"tabOrder\": 800}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_machine.production_line\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"dim_machine\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"production_line\"}, \"Name\": \"dim_machine.production_line\", \"NativeReferenceName\": \"Production Line\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Basic'\"}}}}}], \"header\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"items\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#131B2E\"}}, \"textSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#263554\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Production Line'\"}}}, \"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#19233C\"}}, \"alignment\": {\"expr\": {\"Literal\": {\"Value\": \"'left'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"11D\"}}}}}]}}}",
           "filters": "[]"
         },
         {
           "x": 20,
-          "y": 730,
+          "y": 496,
           "z": 900,
-          "width": 295,
-          "height": 325,
-          "config": "{\"name\": \"vc_sl_cat\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 730, \"z\": 900, \"width\": 295, \"height\": 325, \"tabOrder\": 900}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_product.product_category\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"dim_product\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"product_category\"}, \"Name\": \"dim_product.product_category\", \"NativeReferenceName\": \"product_category\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Basic'\"}}}}}]}}}",
+          "width": 280,
+          "height": 240,
+          "config": "{\"name\": \"vc_p1_s2\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 496, \"z\": 900, \"width\": 280, \"height\": 240, \"tabOrder\": 900}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_shift.shift_name\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"dim_shift\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"shift_name\"}, \"Name\": \"dim_shift.shift_name\", \"NativeReferenceName\": \"Shift Schedule\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Basic'\"}}}}}], \"header\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"items\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#131B2E\"}}, \"textSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#263554\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Shift Schedule'\"}}}, \"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#19233C\"}}, \"alignment\": {\"expr\": {\"Literal\": {\"Value\": \"'left'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"11D\"}}}}}]}}}",
           "filters": "[]"
         },
         {
-          "x": 330,
-          "y": 170,
+          "x": 20,
+          "y": 748,
           "z": 1000,
-          "width": 780,
-          "height": 430,
-          "config": "{\"name\": \"vc_col_month\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 330, \"y\": 170, \"z\": 1000, \"width\": 780, \"height\": 430, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_date.month_short\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.OEE\"}, {\"queryRef\": \"_Measures.Availability\"}, {\"queryRef\": \"_Measures.Performance Rate\"}, {\"queryRef\": \"_Measures.Quality Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_date\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"month_short\"}, \"Name\": \"dim_date.month_short\", \"NativeReferenceName\": \"month_short\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}, \"Name\": \"_Measures.OEE\", \"NativeReferenceName\": \"OEE\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Availability\"}, \"Name\": \"_Measures.Availability\", \"NativeReferenceName\": \"Availability\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Performance Rate\"}, \"Name\": \"_Measures.Performance Rate\", \"NativeReferenceName\": \"Performance Rate\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Quality Rate\"}, \"Name\": \"_Measures.Quality Rate\", \"NativeReferenceName\": \"Quality Rate\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "width": 280,
+          "height": 312,
+          "config": "{\"name\": \"vc_p1_s3\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 748, \"z\": 1000, \"width\": 280, \"height\": 312, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_product.product_category\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"dim_product\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"product_category\"}, \"Name\": \"dim_product.product_category\", \"NativeReferenceName\": \"Product Division\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Basic'\"}}}}}], \"header\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"items\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#131B2E\"}}, \"textSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#263554\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Product Division'\"}}}, \"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#19233C\"}}, \"alignment\": {\"expr\": {\"Literal\": {\"Value\": \"'left'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"11D\"}}}}}]}}}",
           "filters": "[]"
         },
         {
-          "x": 330,
-          "y": 615,
+          "x": 314,
+          "y": 204,
           "z": 1100,
-          "width": 780,
-          "height": 440,
-          "config": "{\"name\": \"vc_bar_dt\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 330, \"y\": 615, \"z\": 1100, \"width\": 780, \"height\": 440, \"tabOrder\": 1100}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_production.downtime_reason\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Downtime Hours\"}, {\"queryRef\": \"_Measures.Unplanned Downtime\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"fact_production\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"downtime_reason\"}, \"Name\": \"fact_production.downtime_reason\", \"NativeReferenceName\": \"downtime_reason\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Downtime Hours\"}, \"Name\": \"_Measures.Downtime Hours\", \"NativeReferenceName\": \"Downtime Hours\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Unplanned Downtime\"}, \"Name\": \"_Measures.Unplanned Downtime\", \"NativeReferenceName\": \"Unplanned Downtime\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Downtime Hours\"}}}]}, \"drillFilterOtherVisuals\": true}}",
+          "width": 776,
+          "height": 420,
+          "config": "{\"name\": \"vc_p1_ch1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 314, \"y\": 204, \"z\": 1100, \"width\": 776, \"height\": 420, \"tabOrder\": 1100}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_date.month_short\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.OEE\"}, {\"queryRef\": \"_Measures.Availability\"}, {\"queryRef\": \"_Measures.Performance Rate\"}, {\"queryRef\": \"_Measures.Quality Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_date\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"month_short\"}, \"Name\": \"dim_date.month_short\", \"NativeReferenceName\": \"Month\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}, \"Name\": \"_Measures.OEE\", \"NativeReferenceName\": \"OEE\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Availability\"}, \"Name\": \"_Measures.Availability\", \"NativeReferenceName\": \"Availability\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Performance Rate\"}, \"Name\": \"_Measures.Performance Rate\", \"NativeReferenceName\": \"Performance Rate\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Quality Rate\"}, \"Name\": \"_Measures.Quality Rate\", \"NativeReferenceName\": \"Quality Rate\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"showAxisTitle\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#E2E8F0\"}}}}], \"valueAxis\": [{\"properties\": {\"showAxisTitle\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"gridlineColor\": {\"solid\": {\"color\": \"#1E293B\"}}}}], \"legend\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"position\": {\"expr\": {\"Literal\": {\"Value\": \"'Top'\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#263554\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Monthly OEE & Component Rate Trends (Jan - Dec 2024)'\"}}}, \"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#19233C\"}}, \"alignment\": {\"expr\": {\"Literal\": {\"Value\": \"'left'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"11D\"}}}}}]}}}",
           "filters": "[]"
         },
         {
-          "x": 1125,
-          "y": 170,
+          "x": 314,
+          "y": 636,
           "z": 1200,
-          "width": 775,
-          "height": 430,
-          "config": "{\"name\": \"vc_bar_mach\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1125, \"y\": 170, \"z\": 1200, \"width\": 775, \"height\": 430, \"tabOrder\": 1200}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_machine.machine_id\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.OEE\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_machine\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"machine_id\"}, \"Name\": \"dim_machine.machine_id\", \"NativeReferenceName\": \"machine_id\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}, \"Name\": \"_Measures.OEE\", \"NativeReferenceName\": \"OEE\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}}}]}, \"drillFilterOtherVisuals\": true}}",
+          "width": 776,
+          "height": 424,
+          "config": "{\"name\": \"vc_p1_ch2\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 314, \"y\": 636, \"z\": 1200, \"width\": 776, \"height\": 424, \"tabOrder\": 1200}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_production.downtime_reason\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Unplanned Downtime\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"fact_production\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"downtime_reason\"}, \"Name\": \"fact_production.downtime_reason\", \"NativeReferenceName\": \"Root Cause\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Unplanned Downtime\"}, \"Name\": \"_Measures.Unplanned Downtime\", \"NativeReferenceName\": \"Unplanned Downtime\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Unplanned Downtime\"}}}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"showAxisTitle\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#E2E8F0\"}}}}], \"valueAxis\": [{\"properties\": {\"showAxisTitle\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"gridlineColor\": {\"solid\": {\"color\": \"#1E293B\"}}}}], \"legend\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"position\": {\"expr\": {\"Literal\": {\"Value\": \"'Top'\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}}}], \"labels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#F8FAFC\"}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#263554\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Unplanned Downtime Pareto by Root Cause (Hours)'\"}}}, \"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#19233C\"}}, \"alignment\": {\"expr\": {\"Literal\": {\"Value\": \"'left'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"11D\"}}}}}]}}}",
           "filters": "[]"
         },
         {
-          "x": 1125,
-          "y": 615,
+          "x": 1104,
+          "y": 204,
           "z": 1300,
-          "width": 775,
-          "height": 440,
-          "config": "{\"name\": \"vc_tbl_mach\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1125, \"y\": 615, \"z\": 1300, \"width\": 775, \"height\": 440, \"tabOrder\": 1300}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_machine.machine_id\"}, {\"queryRef\": \"dim_machine.production_line\"}, {\"queryRef\": \"dim_machine.machine_type\"}, {\"queryRef\": \"_Measures.OEE\"}, {\"queryRef\": \"_Measures.Availability\"}, {\"queryRef\": \"_Measures.Performance Rate\"}, {\"queryRef\": \"_Measures.Quality Rate\"}, {\"queryRef\": \"_Measures.Good Units\"}, {\"queryRef\": \"_Measures.Scrap Rate\"}, {\"queryRef\": \"_Measures.Downtime Hours\"}, {\"queryRef\": \"_Measures.MTBF Hours\"}, {\"queryRef\": \"_Measures.OEE Status\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dim_machine\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"machine_id\"}, \"Name\": \"dim_machine.machine_id\", \"NativeReferenceName\": \"machine_id\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"production_line\"}, \"Name\": \"dim_machine.production_line\", \"NativeReferenceName\": \"production_line\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"machine_type\"}, \"Name\": \"dim_machine.machine_type\", \"NativeReferenceName\": \"machine_type\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}, \"Name\": \"_Measures.OEE\", \"NativeReferenceName\": \"OEE\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Availability\"}, \"Name\": \"_Measures.Availability\", \"NativeReferenceName\": \"Availability\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Performance Rate\"}, \"Name\": \"_Measures.Performance Rate\", \"NativeReferenceName\": \"Performance Rate\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Quality Rate\"}, \"Name\": \"_Measures.Quality Rate\", \"NativeReferenceName\": \"Quality Rate\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Good Units\"}, \"Name\": \"_Measures.Good Units\", \"NativeReferenceName\": \"Good Units\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Scrap Rate\"}, \"Name\": \"_Measures.Scrap Rate\", \"NativeReferenceName\": \"Scrap Rate\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Downtime Hours\"}, \"Name\": \"_Measures.Downtime Hours\", \"NativeReferenceName\": \"Downtime Hours\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"MTBF Hours\"}, \"Name\": \"_Measures.MTBF Hours\", \"NativeReferenceName\": \"MTBF Hours\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE Status\"}, \"Name\": \"_Measures.OEE Status\", \"NativeReferenceName\": \"OEE Status\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}}}]}, \"drillFilterOtherVisuals\": true}}",
+          "width": 796,
+          "height": 420,
+          "config": "{\"name\": \"vc_p1_ch3\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1104, \"y\": 204, \"z\": 1300, \"width\": 796, \"height\": 420, \"tabOrder\": 1300}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_machine.machine_id\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.OEE\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_machine\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"machine_id\"}, \"Name\": \"dim_machine.machine_id\", \"NativeReferenceName\": \"Machine\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}, \"Name\": \"_Measures.OEE\", \"NativeReferenceName\": \"OEE\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}}}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"showAxisTitle\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#E2E8F0\"}}}}], \"valueAxis\": [{\"properties\": {\"showAxisTitle\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"gridlineColor\": {\"solid\": {\"color\": \"#1E293B\"}}}}], \"legend\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"position\": {\"expr\": {\"Literal\": {\"Value\": \"'Top'\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}}}], \"labels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#F8FAFC\"}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#263554\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Machine OEE Ranking vs 85% World-Class Benchmark'\"}}}, \"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#19233C\"}}, \"alignment\": {\"expr\": {\"Literal\": {\"Value\": \"'left'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"11D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1104,
+          "y": 636,
+          "z": 1400,
+          "width": 796,
+          "height": 424,
+          "config": "{\"name\": \"vc_p1_tbl\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1104, \"y\": 636, \"z\": 1400, \"width\": 796, \"height\": 424, \"tabOrder\": 1400}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_machine.machine_id\"}, {\"queryRef\": \"dim_machine.production_line\"}, {\"queryRef\": \"dim_machine.machine_type\"}, {\"queryRef\": \"_Measures.OEE\"}, {\"queryRef\": \"_Measures.Availability\"}, {\"queryRef\": \"_Measures.Performance Rate\"}, {\"queryRef\": \"_Measures.Quality Rate\"}, {\"queryRef\": \"_Measures.Good Units\"}, {\"queryRef\": \"_Measures.Scrap Rate\"}, {\"queryRef\": \"_Measures.Downtime Hours\"}, {\"queryRef\": \"_Measures.MTBF Hours\"}, {\"queryRef\": \"_Measures.OEE Status\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dim_machine\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"machine_id\"}, \"Name\": \"dim_machine.machine_id\", \"NativeReferenceName\": \"Machine\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"production_line\"}, \"Name\": \"dim_machine.production_line\", \"NativeReferenceName\": \"Line\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"machine_type\"}, \"Name\": \"dim_machine.machine_type\", \"NativeReferenceName\": \"Type\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}, \"Name\": \"_Measures.OEE\", \"NativeReferenceName\": \"OEE\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Availability\"}, \"Name\": \"_Measures.Availability\", \"NativeReferenceName\": \"Avail %\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Performance Rate\"}, \"Name\": \"_Measures.Performance Rate\", \"NativeReferenceName\": \"Perf %\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Quality Rate\"}, \"Name\": \"_Measures.Quality Rate\", \"NativeReferenceName\": \"Qual %\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Good Units\"}, \"Name\": \"_Measures.Good Units\", \"NativeReferenceName\": \"Good Units\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Scrap Rate\"}, \"Name\": \"_Measures.Scrap Rate\", \"NativeReferenceName\": \"Scrap %\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Downtime Hours\"}, \"Name\": \"_Measures.Downtime Hours\", \"NativeReferenceName\": \"Downtime Hrs\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"MTBF Hours\"}, \"Name\": \"_Measures.MTBF Hours\", \"NativeReferenceName\": \"MTBF Hrs\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE Status\"}, \"Name\": \"_Measures.OEE Status\", \"NativeReferenceName\": \"Status\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}}}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"grid\": [{\"properties\": {\"gridHorizontal\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"gridHorizontalColor\": {\"solid\": {\"color\": \"#1E293B\"}}, \"outlineColor\": {\"solid\": {\"color\": \"#38BDF8\"}}}}], \"columnHeaders\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": \"#38BDF8\"}}, \"backColor\": {\"solid\": {\"color\": \"#0F172A\"}}}}], \"values\": [{\"properties\": {\"fontColorPrimary\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"backColorPrimary\": {\"solid\": {\"color\": \"#131B2E\"}}, \"fontColorSecondary\": {\"solid\": {\"color\": \"#E2E8F0\"}}, \"backColorSecondary\": {\"solid\": {\"color\": \"#182238\"}}}}], \"total\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": \"#10B981\"}}, \"backColor\": {\"solid\": {\"color\": \"#0F172A\"}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#263554\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Machine OEE, Availability, Scrap, Downtime & MTBF Matrix'\"}}}, \"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#19233C\"}}, \"alignment\": {\"expr\": {\"Literal\": {\"Value\": \"'left'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"11D\"}}}}}]}}}",
           "filters": "[]"
         }
       ],
-      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#F3F4F6\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}]}}",
+      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#0B101E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"outspace\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#070B14\"}}}}]}}",
       "displayOption": 1,
       "width": 1920,
       "height": 1080
@@ -189,9 +204,148 @@
     {
       "id": 1,
       "name": "f045d8df6a45c261c602",
-      "displayName": "2. Executive OEE Overview",
+      "displayName": "2. Reliability & Cost Studio (Live)",
       "filters": "[]",
       "ordinal": 1,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 12,
+          "z": 100,
+          "width": 1880,
+          "height": 50,
+          "config": "{\"name\": \"vc_p2_banner\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 12, \"z\": 100, \"width\": 1880, \"height\": 50, \"tabOrder\": 100}}], \"singleVisual\": {\"visualType\": \"textbox\", \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"RELIABILITY (MTBF), DOWNTIME ROOT CAUSE, SHIFT ANOVA & COST OF POOR QUALITY STUDIO   \", \"textStyle\": {\"fontWeight\": \"bold\", \"fontFamily\": \"Segoe UI\", \"fontSize\": \"14pt\", \"color\": \"#38BDF8\"}}, {\"value\": \"Fleet MTBF: 33.0 Hrs  |  Unplanned Downtime: 4,258.7 Hrs  |  Equipment Failures: 4,169  |  Total Scrap Rate: 3.72%\", \"textStyle\": {\"fontFamily\": \"Segoe UI\", \"fontSize\": \"10.5pt\", \"color\": \"#CBD5E1\"}}]}]}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#0F172A\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#38BDF8\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 72,
+          "z": 200,
+          "width": 298,
+          "height": 120,
+          "config": "{\"name\": \"vc_p2_c1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 72, \"z\": 200, \"width\": 298, \"height\": 120, \"tabOrder\": 200}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Downtime Hours\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Downtime Hours\"}, \"Name\": \"_Measures.Downtime Hours\", \"NativeReferenceName\": \"Total Downtime Hours\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#F59E0B\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#F59E0B\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 332,
+          "y": 72,
+          "z": 300,
+          "width": 298,
+          "height": 120,
+          "config": "{\"name\": \"vc_p2_c2\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 332, \"y\": 72, \"z\": 300, \"width\": 298, \"height\": 120, \"tabOrder\": 300}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Unplanned Downtime\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Unplanned Downtime\"}, \"Name\": \"_Measures.Unplanned Downtime\", \"NativeReferenceName\": \"Unplanned Downtime Hours\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#EF4444\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#EF4444\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 644,
+          "y": 72,
+          "z": 400,
+          "width": 298,
+          "height": 120,
+          "config": "{\"name\": \"vc_p2_c3\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 644, \"y\": 72, \"z\": 400, \"width\": 298, \"height\": 120, \"tabOrder\": 400}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Failure Count\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Failure Count\"}, \"Name\": \"_Measures.Failure Count\", \"NativeReferenceName\": \"Equipment Failure Count\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#F97316\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#F97316\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 956,
+          "y": 72,
+          "z": 500,
+          "width": 298,
+          "height": 120,
+          "config": "{\"name\": \"vc_p2_c4\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 956, \"y\": 72, \"z\": 500, \"width\": 298, \"height\": 120, \"tabOrder\": 500}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.MTBF Hours\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"MTBF Hours\"}, \"Name\": \"_Measures.MTBF Hours\", \"NativeReferenceName\": \"Mean Time Between Failures\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#38BDF8\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#38BDF8\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1268,
+          "y": 72,
+          "z": 600,
+          "width": 305,
+          "height": 120,
+          "config": "{\"name\": \"vc_p2_c5\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1268, \"y\": 72, \"z\": 600, \"width\": 305, \"height\": 120, \"tabOrder\": 600}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Scrap Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Scrap Rate\"}, \"Name\": \"_Measures.Scrap Rate\", \"NativeReferenceName\": \"Overall Scrap / Defect Rate\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#A855F7\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#A855F7\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1587,
+          "y": 72,
+          "z": 700,
+          "width": 313,
+          "height": 120,
+          "config": "{\"name\": \"vc_p2_c6\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1587, \"y\": 72, \"z\": 700, \"width\": 313, \"height\": 120, \"tabOrder\": 700}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Cost of Poor Quality\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Cost of Poor Quality\"}, \"Name\": \"_Measures.Cost of Poor Quality\", \"NativeReferenceName\": \"Cost of Poor Quality ($ USD)\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#EF4444\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#EF4444\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 204,
+          "z": 800,
+          "width": 280,
+          "height": 280,
+          "config": "{\"name\": \"vc_p2_s1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 204, \"z\": 800, \"width\": 280, \"height\": 280, \"tabOrder\": 800}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_machine.production_line\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"dim_machine\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"production_line\"}, \"Name\": \"dim_machine.production_line\", \"NativeReferenceName\": \"Production Line\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Basic'\"}}}}}], \"header\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"items\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#131B2E\"}}, \"textSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#263554\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Production Line'\"}}}, \"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#19233C\"}}, \"alignment\": {\"expr\": {\"Literal\": {\"Value\": \"'left'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"11D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 496,
+          "z": 900,
+          "width": 280,
+          "height": 240,
+          "config": "{\"name\": \"vc_p2_s2\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 496, \"z\": 900, \"width\": 280, \"height\": 240, \"tabOrder\": 900}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_shift.shift_name\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"dim_shift\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"shift_name\"}, \"Name\": \"dim_shift.shift_name\", \"NativeReferenceName\": \"Shift Schedule\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Basic'\"}}}}}], \"header\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"items\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#131B2E\"}}, \"textSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#263554\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Shift Schedule'\"}}}, \"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#19233C\"}}, \"alignment\": {\"expr\": {\"Literal\": {\"Value\": \"'left'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"11D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 748,
+          "z": 1000,
+          "width": 280,
+          "height": 312,
+          "config": "{\"name\": \"vc_p2_s3\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 748, \"z\": 1000, \"width\": 280, \"height\": 312, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_operator.experience_level\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"dim_operator\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"experience_level\"}, \"Name\": \"dim_operator.experience_level\", \"NativeReferenceName\": \"Operator Experience\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Basic'\"}}}}}], \"header\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"items\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#131B2E\"}}, \"textSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#263554\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Operator Experience'\"}}}, \"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#19233C\"}}, \"alignment\": {\"expr\": {\"Literal\": {\"Value\": \"'left'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"11D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 314,
+          "y": 204,
+          "z": 1100,
+          "width": 776,
+          "height": 420,
+          "config": "{\"name\": \"vc_p2_ch1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 314, \"y\": 204, \"z\": 1100, \"width\": 776, \"height\": 420, \"tabOrder\": 1100}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_machine.machine_id\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.MTBF Hours\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_machine\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"machine_id\"}, \"Name\": \"dim_machine.machine_id\", \"NativeReferenceName\": \"Machine\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"MTBF Hours\"}, \"Name\": \"_Measures.MTBF Hours\", \"NativeReferenceName\": \"MTBF Hours\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"MTBF Hours\"}}}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"showAxisTitle\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#E2E8F0\"}}}}], \"valueAxis\": [{\"properties\": {\"showAxisTitle\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"gridlineColor\": {\"solid\": {\"color\": \"#1E293B\"}}}}], \"legend\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"position\": {\"expr\": {\"Literal\": {\"Value\": \"'Top'\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}}}], \"labels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#F8FAFC\"}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#263554\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Mean Time Between Failures (MTBF Hours) by Machine'\"}}}, \"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#19233C\"}}, \"alignment\": {\"expr\": {\"Literal\": {\"Value\": \"'left'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"11D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 314,
+          "y": 636,
+          "z": 1200,
+          "width": 776,
+          "height": 424,
+          "config": "{\"name\": \"vc_p2_ch2\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 314, \"y\": 636, \"z\": 1200, \"width\": 776, \"height\": 424, \"tabOrder\": 1200}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_shift.shift_name\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.OEE\"}, {\"queryRef\": \"_Measures.Availability\"}, {\"queryRef\": \"_Measures.Performance Rate\"}, {\"queryRef\": \"_Measures.Quality Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_shift\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"shift_name\"}, \"Name\": \"dim_shift.shift_name\", \"NativeReferenceName\": \"Shift\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}, \"Name\": \"_Measures.OEE\", \"NativeReferenceName\": \"OEE\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Availability\"}, \"Name\": \"_Measures.Availability\", \"NativeReferenceName\": \"Availability\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Performance Rate\"}, \"Name\": \"_Measures.Performance Rate\", \"NativeReferenceName\": \"Performance Rate\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Quality Rate\"}, \"Name\": \"_Measures.Quality Rate\", \"NativeReferenceName\": \"Quality Rate\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}}}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"showAxisTitle\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#E2E8F0\"}}}}], \"valueAxis\": [{\"properties\": {\"showAxisTitle\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"gridlineColor\": {\"solid\": {\"color\": \"#1E293B\"}}}}], \"legend\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"position\": {\"expr\": {\"Literal\": {\"Value\": \"'Top'\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}}}], \"labels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#F8FAFC\"}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#263554\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Shift Performance Comparison (OEE, Availability, Performance, Quality)'\"}}}, \"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#19233C\"}}, \"alignment\": {\"expr\": {\"Literal\": {\"Value\": \"'left'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"11D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1104,
+          "y": 204,
+          "z": 1300,
+          "width": 796,
+          "height": 420,
+          "config": "{\"name\": \"vc_p2_ch3\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1104, \"y\": 204, \"z\": 1300, \"width\": 796, \"height\": 420, \"tabOrder\": 1300}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_operator.experience_level\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.OEE\"}, {\"queryRef\": \"_Measures.Quality Rate\"}, {\"queryRef\": \"_Measures.Scrap Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_operator\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"experience_level\"}, \"Name\": \"dim_operator.experience_level\", \"NativeReferenceName\": \"Experience Tier\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}, \"Name\": \"_Measures.OEE\", \"NativeReferenceName\": \"OEE\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Quality Rate\"}, \"Name\": \"_Measures.Quality Rate\", \"NativeReferenceName\": \"Quality Rate\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Scrap Rate\"}, \"Name\": \"_Measures.Scrap Rate\", \"NativeReferenceName\": \"Scrap Rate\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}}}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"showAxisTitle\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#E2E8F0\"}}}}], \"valueAxis\": [{\"properties\": {\"showAxisTitle\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#CBD5E1\"}}, \"gridlineColor\": {\"solid\": {\"color\": \"#1E293B\"}}}}], \"legend\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"position\": {\"expr\": {\"Literal\": {\"Value\": \"'Top'\"}}}, \"labelColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}}}], \"labels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#F8FAFC\"}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#263554\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'OEE & Quality Rate by Operator Experience Tier'\"}}}, \"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#19233C\"}}, \"alignment\": {\"expr\": {\"Literal\": {\"Value\": \"'left'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"11D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1104,
+          "y": 636,
+          "z": 1400,
+          "width": 796,
+          "height": 424,
+          "config": "{\"name\": \"vc_p2_tbl\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1104, \"y\": 636, \"z\": 1400, \"width\": 796, \"height\": 424, \"tabOrder\": 1400}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_product.product_id\"}, {\"queryRef\": \"dim_product.product_name\"}, {\"queryRef\": \"dim_product.product_category\"}, {\"queryRef\": \"_Measures.OEE\"}, {\"queryRef\": \"_Measures.Good Units\"}, {\"queryRef\": \"_Measures.Defect Units\"}, {\"queryRef\": \"_Measures.Scrap Rate\"}, {\"queryRef\": \"_Measures.Production Value\"}, {\"queryRef\": \"_Measures.Cost of Poor Quality\"}, {\"queryRef\": \"_Measures.Energy per Unit\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"p\", \"Entity\": \"dim_product\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"p\"}}, \"Property\": \"product_id\"}, \"Name\": \"dim_product.product_id\", \"NativeReferenceName\": \"SKU\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"p\"}}, \"Property\": \"product_name\"}, \"Name\": \"dim_product.product_name\", \"NativeReferenceName\": \"Product Name\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"p\"}}, \"Property\": \"product_category\"}, \"Name\": \"dim_product.product_category\", \"NativeReferenceName\": \"Division\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}, \"Name\": \"_Measures.OEE\", \"NativeReferenceName\": \"OEE\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Good Units\"}, \"Name\": \"_Measures.Good Units\", \"NativeReferenceName\": \"Good Units\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Defect Units\"}, \"Name\": \"_Measures.Defect Units\", \"NativeReferenceName\": \"Defects\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Scrap Rate\"}, \"Name\": \"_Measures.Scrap Rate\", \"NativeReferenceName\": \"Scrap %\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Production Value\"}, \"Name\": \"_Measures.Production Value\", \"NativeReferenceName\": \"Prod Value\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Cost of Poor Quality\"}, \"Name\": \"_Measures.Cost of Poor Quality\", \"NativeReferenceName\": \"COPQ ($)\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Energy per Unit\"}, \"Name\": \"_Measures.Energy per Unit\", \"NativeReferenceName\": \"kWh/Unit\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Production Value\"}}}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"grid\": [{\"properties\": {\"gridHorizontal\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"gridHorizontalColor\": {\"solid\": {\"color\": \"#1E293B\"}}, \"outlineColor\": {\"solid\": {\"color\": \"#38BDF8\"}}}}], \"columnHeaders\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": \"#38BDF8\"}}, \"backColor\": {\"solid\": {\"color\": \"#0F172A\"}}}}], \"values\": [{\"properties\": {\"fontColorPrimary\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"backColorPrimary\": {\"solid\": {\"color\": \"#131B2E\"}}, \"fontColorSecondary\": {\"solid\": {\"color\": \"#E2E8F0\"}}, \"backColorSecondary\": {\"solid\": {\"color\": \"#182238\"}}}}], \"total\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": \"#10B981\"}}, \"backColor\": {\"solid\": {\"color\": \"#0F172A\"}}}}]}, \"vcObjects\": {\"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#131B2E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": \"#263554\"}}, \"radius\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"width\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Product SKU Profitability, Scrap Rate & Cost of Poor Quality Matrix'\"}}}, \"fontColor\": {\"solid\": {\"color\": \"#F8FAFC\"}}, \"background\": {\"solid\": {\"color\": \"#19233C\"}}, \"alignment\": {\"expr\": {\"Literal\": {\"Value\": \"'left'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"11D\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ],
+      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#0B101E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"outspace\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#070B14\"}}}}]}}",
+      "displayOption": 1,
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": 2,
+      "name": "f045d8df6a45c261c603",
+      "displayName": "3. Executive OEE Infographic",
+      "filters": "[]",
+      "ordinal": 2,
       "visualContainers": [
         {
           "x": 20,
@@ -203,17 +357,17 @@
           "filters": "[]"
         }
       ],
-      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#0B101E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}]}}",
+      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#0B101E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"outspace\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#070B14\"}}}}]}}",
       "displayOption": 1,
       "width": 1920,
       "height": 1080
     },
     {
-      "id": 2,
-      "name": "f045d8df6a45c261c603",
-      "displayName": "3. OEE Component Trends",
+      "id": 3,
+      "name": "f045d8df6a45c261c604",
+      "displayName": "4. OEE Component Trends",
       "filters": "[]",
-      "ordinal": 2,
+      "ordinal": 3,
       "visualContainers": [
         {
           "x": 60,
@@ -225,17 +379,17 @@
           "filters": "[]"
         }
       ],
-      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#0B101E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}]}}",
+      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#0B101E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"outspace\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#070B14\"}}}}]}}",
       "displayOption": 1,
       "width": 1920,
       "height": 1080
     },
     {
-      "id": 3,
-      "name": "f045d8df6a45c261c604",
-      "displayName": "4. Downtime Pareto & MTBF",
+      "id": 4,
+      "name": "f045d8df6a45c261c605",
+      "displayName": "5. Downtime Pareto & MTBF",
       "filters": "[]",
-      "ordinal": 3,
+      "ordinal": 4,
       "visualContainers": [
         {
           "x": 20,
@@ -256,17 +410,17 @@
           "filters": "[]"
         }
       ],
-      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#0B101E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}]}}",
+      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#0B101E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"outspace\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#070B14\"}}}}]}}",
       "displayOption": 1,
       "width": 1920,
       "height": 1080
     },
     {
-      "id": 4,
-      "name": "f045d8df6a45c261c605",
-      "displayName": "5. Sensor & Shift ANOVA",
+      "id": 5,
+      "name": "f045d8df6a45c261c606",
+      "displayName": "6. Sensor & Shift ANOVA",
       "filters": "[]",
-      "ordinal": 4,
+      "ordinal": 5,
       "visualContainers": [
         {
           "x": 80,
@@ -287,12 +441,12 @@
           "filters": "[]"
         }
       ],
-      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#0B101E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}]}}",
+      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#0B101E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"outspace\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#070B14\"}}}}]}}",
       "displayOption": 1,
       "width": 1920,
       "height": 1080
     }
   ],
-  "config": "{\"version\": \"5.76\", \"themeCollection\": {\"baseTheme\": {\"name\": \"Fluent2-CY26SU08\", \"version\": {\"visual\": \"2.12.0\", \"report\": \"3.4.0\", \"page\": \"2.3.1\"}, \"type\": 2}}, \"activeSectionIndex\": 0, \"defaultDrillFilterOtherVisuals\": true, \"settings\": {\"useNewFilterPaneExperience\": true, \"allowChangeFilterTypes\": true, \"useStylableVisualContainerHeader\": true, \"queryLimitOption\": 6, \"useEnhancedTooltips\": true, \"exportDataMode\": 1, \"useDefaultAggregateDisplayName\": true}, \"objects\": {\"section\": [{\"properties\": {\"verticalAlignment\": {\"expr\": {\"Literal\": {\"Value\": \"'Top'\"}}}}}]}}",
+  "config": "{\"version\": \"5.76\", \"themeCollection\": {\"baseTheme\": {\"name\": \"Fluent2-CY26SU08\", \"version\": {\"visual\": \"2.12.0\", \"report\": \"3.4.0\", \"page\": \"2.3.1\"}, \"type\": 2}, \"customTheme\": {\"name\": \"HoneywellIndustrialDark.json\", \"version\": {\"visual\": \"2.12.0\", \"report\": \"3.4.0\", \"page\": \"2.3.1\"}, \"type\": 1}}, \"activeSectionIndex\": 0, \"defaultDrillFilterOtherVisuals\": true, \"settings\": {\"useNewFilterPaneExperience\": true, \"allowChangeFilterTypes\": true, \"useStylableVisualContainerHeader\": true, \"queryLimitOption\": 6, \"useEnhancedTooltips\": true, \"exportDataMode\": 1, \"useDefaultAggregateDisplayName\": true}, \"objects\": {\"section\": [{\"properties\": {\"verticalAlignment\": {\"expr\": {\"Literal\": {\"Value\": \"'Top'\"}}}}}]}}",
   "layoutOptimization": 0
 }

@@ -9,8 +9,7 @@
 MEASURE '_Measures'[Availability] =
     DIVIDE(
         SUM(fact_production[actual_run_time_min]),
-        SUM(fact_production[planned_production_time_min]),
-        0
+        SUM(fact_production[planned_production_time_min])
     )
     FORMAT_STRING = "0.0%"
     DISPLAY_FOLDER = "01. Core OEE"
@@ -21,8 +20,7 @@ MEASURE '_Measures'[Performance Rate] =
             fact_production,
             fact_production[ideal_cycle_time_sec] * fact_production[total_units_produced]
         ),
-        SUM(fact_production[actual_run_time_min]) * 60,
-        0
+        SUM(fact_production[actual_run_time_min]) * 60
     )
     FORMAT_STRING = "0.0%"
     DISPLAY_FOLDER = "01. Core OEE"
@@ -30,8 +28,7 @@ MEASURE '_Measures'[Performance Rate] =
 MEASURE '_Measures'[Quality Rate] =
     DIVIDE(
         SUM(fact_production[good_units]),
-        SUM(fact_production[total_units_produced]),
-        0
+        SUM(fact_production[total_units_produced])
     )
     FORMAT_STRING = "0.0%"
     DISPLAY_FOLDER = "01. Core OEE"
@@ -41,7 +38,11 @@ MEASURE '_Measures'[OEE] =
     VAR _Performance = [Performance Rate]
     VAR _Quality = [Quality Rate]
     RETURN
-        _Availability * _Performance * _Quality
+        IF(
+            ISBLANK(_Availability),
+            BLANK(),
+            _Availability * _Performance * _Quality
+        )
     FORMAT_STRING = "0.0%"
     DISPLAY_FOLDER = "01. Core OEE"
 
@@ -65,8 +66,7 @@ MEASURE '_Measures'[Defect Units] =
 MEASURE '_Measures'[Scrap Rate] =
     DIVIDE(
         [Defect Units],
-        [Total Units],
-        0
+        [Total Units]
     )
     FORMAT_STRING = "0.00%"
     DISPLAY_FOLDER = "02. Production"
@@ -90,32 +90,28 @@ MEASURE '_Measures'[Cost of Poor Quality] =
 // --- FOLDER: 03. Downtime Measures ---
 
 MEASURE '_Measures'[Downtime Hours] =
-    DIVIDE(
-        SUM(fact_production[downtime_min]),
-        60,
-        0
-    )
+    VAR _dt = SUM(fact_production[downtime_min])
+    RETURN
+        IF(_dt > 0, DIVIDE(_dt, 60))
     FORMAT_STRING = "#,0.0"
     DISPLAY_FOLDER = "03. Downtime"
 
 MEASURE '_Measures'[Downtime %] =
     DIVIDE(
         SUM(fact_production[downtime_min]),
-        SUM(fact_production[planned_production_time_min]),
-        0
+        SUM(fact_production[planned_production_time_min])
     )
     FORMAT_STRING = "0.00%"
     DISPLAY_FOLDER = "03. Downtime"
 
 MEASURE '_Measures'[Unplanned Downtime] =
-    DIVIDE(
+    VAR _dt =
         CALCULATE(
             SUM(fact_production[downtime_min]),
-            NOT(fact_production[downtime_reason] IN {"Planned Maintenance", "No Downtime"})
-        ),
-        60,
-        0
-    )
+            KEEPFILTERS(NOT(fact_production[downtime_reason] IN {"Planned Maintenance", "No Downtime"}))
+        )
+    RETURN
+        IF(_dt > 0, DIVIDE(_dt, 60))
     FORMAT_STRING = "#,0.0"
     DISPLAY_FOLDER = "03. Downtime"
 
@@ -134,7 +130,7 @@ MEASURE '_Measures'[OEE MoM Change] =
     VAR _Previous = [OEE PM]
     RETURN
         IF(
-            NOT(ISBLANK(_Previous)),
+            NOT(ISBLANK(_Previous)) && NOT(ISBLANK(_Current)),
             _Current - _Previous,
             BLANK()
         )
@@ -179,8 +175,7 @@ MEASURE '_Measures'[Total Energy kWh] =
 MEASURE '_Measures'[Energy per Unit] =
     DIVIDE(
         [Total Energy kWh],
-        [Good Units],
-        0
+        [Good Units]
     )
     FORMAT_STRING = "0.000"
     DISPLAY_FOLDER = "05. Reliability & Energy"
@@ -188,8 +183,7 @@ MEASURE '_Measures'[Energy per Unit] =
 MEASURE '_Measures'[Energy Efficiency] =
     DIVIDE(
         [Good Units],
-        [Total Energy kWh],
-        0
+        [Total Energy kWh]
     )
     FORMAT_STRING = "0.00"
     DISPLAY_FOLDER = "05. Reliability & Energy"
@@ -197,46 +191,61 @@ MEASURE '_Measures'[Energy Efficiency] =
 MEASURE '_Measures'[Failure Count] =
     CALCULATE(
         COUNTROWS(fact_production),
-        fact_production[downtime_reason] = "Equipment Failure"
+        KEEPFILTERS(fact_production[downtime_reason] = "Equipment Failure")
     )
     FORMAT_STRING = "#,0"
     DISPLAY_FOLDER = "05. Reliability & Energy"
 
 MEASURE '_Measures'[MTBF Hours] =
-    DIVIDE(
-        SUM(fact_production[actual_run_time_min]) / 60,
-        [Failure Count],
-        SUM(fact_production[actual_run_time_min]) / 60
-    )
+    VAR _RunHrs = SUM(fact_production[actual_run_time_min]) / 60
+    VAR _Fails = [Failure Count]
+    RETURN
+        IF(
+            ISBLANK(_RunHrs),
+            BLANK(),
+            IF(_Fails = 0, _RunHrs, DIVIDE(_RunHrs, _Fails, 0))
+        )
     FORMAT_STRING = "#,0.0"
     DISPLAY_FOLDER = "05. Reliability & Energy"
 
 // --- FOLDER: 06. KPI Conditional Formatting ---
 
 MEASURE '_Measures'[OEE Status] =
-    SWITCH(
-        TRUE(),
-        [OEE] >= 0.85, "World Class",
-        [OEE] >= 0.75, "Good",
-        [OEE] >= 0.65, "Needs Improvement",
-        "Critical"
+    IF(
+        ISBLANK([OEE]),
+        BLANK(),
+        SWITCH(
+            TRUE(),
+            [OEE] >= 0.85, "World Class",
+            [OEE] >= 0.75, "Good",
+            [OEE] >= 0.65, "Needs Improvement",
+            "Critical"
+        )
     )
     DISPLAY_FOLDER = "06. KPI Formatting"
 
 MEASURE '_Measures'[OEE Color] =
-    SWITCH(
-        TRUE(),
-        [OEE] >= 0.85, "#00B140",
-        [OEE] >= 0.75, "#FFC72C",
-        [OEE] >= 0.65, "#F97316",
-        "#E4002B"
+    IF(
+        ISBLANK([OEE]),
+        BLANK(),
+        SWITCH(
+            TRUE(),
+            [OEE] >= 0.85, "#10B981",
+            [OEE] >= 0.75, "#F59E0B",
+            [OEE] >= 0.65, "#F97316",
+            "#EF4444"
+        )
     )
     DISPLAY_FOLDER = "06. KPI Formatting"
 
 MEASURE '_Measures'[OEE Trend Arrow] =
     IF(
-        [OEE MoM Change] > 0,
-        "▲ " & FORMAT(ABS([OEE MoM Change]) * 100, "0.0") & "%",
-        "▼ " & FORMAT(ABS([OEE MoM Change]) * 100, "0.0") & "%"
+        ISBLANK([OEE MoM Change]),
+        BLANK(),
+        IF(
+            [OEE MoM Change] > 0,
+            "▲ " & FORMAT(ABS([OEE MoM Change]) * 100, "0.0") & "%",
+            "▼ " & FORMAT(ABS([OEE MoM Change]) * 100, "0.0") & "%"
+        )
     )
     DISPLAY_FOLDER = "06. KPI Formatting"

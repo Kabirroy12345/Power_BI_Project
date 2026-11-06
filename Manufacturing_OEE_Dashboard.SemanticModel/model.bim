@@ -1163,28 +1163,28 @@
         "measures": [
           {
             "name": "Availability",
-            "expression": "DIVIDE(SUM(fact_production[actual_run_time_min]), SUM(fact_production[planned_production_time_min]), 0)",
+            "expression": "DIVIDE(SUM(fact_production[actual_run_time_min]), SUM(fact_production[planned_production_time_min]))",
             "displayFolder": "01. Core OEE",
             "lineageTag": "9e6a4b16-1601-508a-b9f9-8a448561b90a",
             "formatString": "0.0%"
           },
           {
             "name": "Performance Rate",
-            "expression": "DIVIDE(SUMX(fact_production, fact_production[ideal_cycle_time_sec] * fact_production[total_units_produced]), SUM(fact_production[actual_run_time_min]) * 60, 0)",
+            "expression": "DIVIDE(SUMX(fact_production, fact_production[ideal_cycle_time_sec] * fact_production[total_units_produced]), SUM(fact_production[actual_run_time_min]) * 60)",
             "displayFolder": "01. Core OEE",
             "lineageTag": "54265275-c116-59ad-95dc-b7563a4ee624",
             "formatString": "0.0%"
           },
           {
             "name": "Quality Rate",
-            "expression": "DIVIDE(SUM(fact_production[good_units]), SUM(fact_production[total_units_produced]), 0)",
+            "expression": "DIVIDE(SUM(fact_production[good_units]), SUM(fact_production[total_units_produced]))",
             "displayFolder": "01. Core OEE",
             "lineageTag": "433ebaa7-5068-5f30-b7af-5115bfd4b5d2",
             "formatString": "0.0%"
           },
           {
             "name": "OEE",
-            "expression": "VAR _Availability = [Availability] VAR _Performance = [Performance Rate] VAR _Quality = [Quality Rate] RETURN _Availability * _Performance * _Quality",
+            "expression": "VAR _Availability = [Availability] VAR _Performance = [Performance Rate] VAR _Quality = [Quality Rate] RETURN IF(ISBLANK(_Availability), BLANK(), _Availability * _Performance * _Quality)",
             "displayFolder": "01. Core OEE",
             "lineageTag": "ffe134a8-a452-5a06-bc8a-5fe22816ce42",
             "formatString": "0.0%"
@@ -1212,7 +1212,7 @@
           },
           {
             "name": "Scrap Rate",
-            "expression": "DIVIDE([Defect Units], [Total Units], 0)",
+            "expression": "DIVIDE([Defect Units], [Total Units])",
             "displayFolder": "02. Production",
             "lineageTag": "20f49337-aecb-5d13-9bc3-5a75c178dbf9",
             "formatString": "0.00%"
@@ -1233,21 +1233,21 @@
           },
           {
             "name": "Downtime Hours",
-            "expression": "DIVIDE(SUM(fact_production[downtime_min]), 60, 0)",
+            "expression": "VAR _dt = SUM(fact_production[downtime_min]) RETURN IF(_dt > 0, DIVIDE(_dt, 60))",
             "displayFolder": "03. Downtime",
             "lineageTag": "df01a0fa-2bf3-5607-b9c5-e3f97707ef34",
             "formatString": "#,0.0"
           },
           {
             "name": "Downtime %",
-            "expression": "DIVIDE(SUM(fact_production[downtime_min]), SUM(fact_production[planned_production_time_min]), 0)",
+            "expression": "DIVIDE(SUM(fact_production[downtime_min]), SUM(fact_production[planned_production_time_min]))",
             "displayFolder": "03. Downtime",
             "lineageTag": "0d7b20b4-fa78-5802-a958-19062fcbff6c",
             "formatString": "0.00%"
           },
           {
             "name": "Unplanned Downtime",
-            "expression": "DIVIDE(CALCULATE(SUM(fact_production[downtime_min]), NOT(fact_production[downtime_reason] IN {\"Planned Maintenance\", \"No Downtime\"})), 60, 0)",
+            "expression": "VAR _dt = CALCULATE(SUM(fact_production[downtime_min]), KEEPFILTERS(NOT(fact_production[downtime_reason] IN {\"Planned Maintenance\", \"No Downtime\"}))) RETURN IF(_dt > 0, DIVIDE(_dt, 60))",
             "displayFolder": "03. Downtime",
             "lineageTag": "54d3181c-8a02-5596-9660-9a13e757e7e7",
             "formatString": "#,0.0"
@@ -1261,7 +1261,7 @@
           },
           {
             "name": "OEE MoM Change",
-            "expression": "VAR _Current = [OEE] VAR _Previous = [OEE PM] RETURN IF(NOT(ISBLANK(_Previous)), _Current - _Previous, BLANK())",
+            "expression": "VAR _Current = [OEE] VAR _Previous = [OEE PM] RETURN IF(NOT(ISBLANK(_Previous)) && NOT(ISBLANK(_Current)), _Current - _Previous, BLANK())",
             "displayFolder": "04. Time Intelligence",
             "lineageTag": "193736c1-0c74-5c90-b385-2d3380c99f2a",
             "formatString": "+0.0%;-0.0%;0.0%"
@@ -1296,47 +1296,47 @@
           },
           {
             "name": "Energy per Unit",
-            "expression": "DIVIDE([Total Energy kWh], [Good Units], 0)",
+            "expression": "DIVIDE([Total Energy kWh], [Good Units])",
             "displayFolder": "05. Reliability & Energy",
             "lineageTag": "73023221-54b5-5c7f-85a7-81b2b3e89a53",
             "formatString": "0.000"
           },
           {
             "name": "Energy Efficiency",
-            "expression": "DIVIDE([Good Units], [Total Energy kWh], 0)",
+            "expression": "DIVIDE([Good Units], [Total Energy kWh])",
             "displayFolder": "05. Reliability & Energy",
             "lineageTag": "7eb90409-ad68-502c-a0eb-487fe188872d",
             "formatString": "0.00"
           },
           {
             "name": "Failure Count",
-            "expression": "CALCULATE(COUNTROWS(fact_production), fact_production[downtime_reason] = \"Equipment Failure\")",
+            "expression": "CALCULATE(COUNTROWS(fact_production), KEEPFILTERS(fact_production[downtime_reason] = \"Equipment Failure\"))",
             "displayFolder": "05. Reliability & Energy",
             "lineageTag": "836159e7-96f2-574d-9116-6c9f3e07cd3b",
             "formatString": "#,0"
           },
           {
             "name": "MTBF Hours",
-            "expression": "DIVIDE(SUM(fact_production[actual_run_time_min]) / 60, [Failure Count], SUM(fact_production[actual_run_time_min]) / 60)",
+            "expression": "VAR _RunHrs = SUM(fact_production[actual_run_time_min]) / 60 VAR _Fails = [Failure Count] RETURN IF(ISBLANK(_RunHrs), BLANK(), IF(_Fails = 0, _RunHrs, DIVIDE(_RunHrs, _Fails, 0)))",
             "displayFolder": "05. Reliability & Energy",
             "lineageTag": "5fd572bd-4e58-555d-b234-d8500be398c8",
             "formatString": "#,0.0"
           },
           {
             "name": "OEE Status",
-            "expression": "SWITCH(TRUE(), [OEE] >= 0.85, \"World Class\", [OEE] >= 0.75, \"Good\", [OEE] >= 0.65, \"Needs Improvement\", \"Critical\")",
+            "expression": "IF(ISBLANK([OEE]), BLANK(), SWITCH(TRUE(), [OEE] >= 0.85, \"World Class\", [OEE] >= 0.75, \"Good\", [OEE] >= 0.65, \"Needs Improvement\", \"Critical\"))",
             "displayFolder": "06. KPI Formatting",
             "lineageTag": "87fe9f9d-3e36-5b3f-a52c-0f11b1bce902"
           },
           {
             "name": "OEE Color",
-            "expression": "SWITCH(TRUE(), [OEE] >= 0.85, \"#00B140\", [OEE] >= 0.75, \"#FFC72C\", [OEE] >= 0.65, \"#F97316\", \"#E4002B\")",
+            "expression": "IF(ISBLANK([OEE]), BLANK(), SWITCH(TRUE(), [OEE] >= 0.85, \"#10B981\", [OEE] >= 0.75, \"#F59E0B\", [OEE] >= 0.65, \"#F97316\", \"#EF4444\"))",
             "displayFolder": "06. KPI Formatting",
             "lineageTag": "880065f0-cdc8-53a7-9c9f-18f8388cbe62"
           },
           {
             "name": "OEE Trend Arrow",
-            "expression": "IF([OEE MoM Change] > 0, \"\u25b2 \" & FORMAT(ABS([OEE MoM Change]) * 100, \"0.0\") & \"%\", \"\u25bc \" & FORMAT(ABS([OEE MoM Change]) * 100, \"0.0\") & \"%\")",
+            "expression": "IF(ISBLANK([OEE MoM Change]), BLANK(), IF([OEE MoM Change] > 0, \"\u25b2 \" & FORMAT(ABS([OEE MoM Change]) * 100, \"0.0\") & \"%\", \"\u25bc \" & FORMAT(ABS([OEE MoM Change]) * 100, \"0.0\") & \"%\"))",
             "displayFolder": "06. KPI Formatting",
             "lineageTag": "545848e7-f91f-5bf1-a879-c8e07a282c12"
           }
