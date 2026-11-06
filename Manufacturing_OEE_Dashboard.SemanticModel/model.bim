@@ -1,152 +1,389 @@
 {
-  "name": "SemanticModel",
-  "compatibilityLevel": 1550,
+  "name": "11fd4a78-fc26-58db-9e18-e6854212daec",
+  "compatibilityLevel": 1606,
   "model": {
     "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
     "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-IN",
+    "valueFilterBehavior": "independent",
     "tables": [
       {
         "name": "fact_production",
+        "lineageTag": "90253871-188d-510a-b8d2-0bdcb55a873e",
         "columns": [
           {
             "name": "record_id",
             "dataType": "int64",
-            "sourceColumn": "record_id"
+            "sourceColumn": "record_id",
+            "lineageTag": "423e0165-03f2-54e8-ac9e-6fe116d09a84",
+            "summarizeBy": "count",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "date_key",
             "dataType": "int64",
-            "sourceColumn": "date_key"
+            "sourceColumn": "date_key",
+            "lineageTag": "a244bb69-1c09-5bdc-82f9-b54c9afcd0fe",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "timestamp",
             "dataType": "dateTime",
-            "sourceColumn": "timestamp"
+            "sourceColumn": "timestamp",
+            "lineageTag": "64f1f282-6ca1-5345-abfe-16407ed7ef56",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "date",
             "dataType": "dateTime",
-            "sourceColumn": "date"
+            "sourceColumn": "date",
+            "lineageTag": "336d1ef8-6ed5-564d-adce-aa7816ac471b",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "hour",
             "dataType": "int64",
-            "sourceColumn": "hour"
+            "sourceColumn": "hour",
+            "lineageTag": "eebdde85-09b1-5cdd-a5f0-bc2b8b073c1b",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "machine_id",
             "dataType": "string",
-            "sourceColumn": "machine_id"
+            "sourceColumn": "machine_id",
+            "lineageTag": "1858b410-e458-5d06-9f50-49f232127461",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "product_id",
             "dataType": "string",
-            "sourceColumn": "product_id"
+            "sourceColumn": "product_id",
+            "lineageTag": "49b155a1-6370-5a37-bf15-bfb960c0a575",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "operator_id",
             "dataType": "string",
-            "sourceColumn": "operator_id"
+            "sourceColumn": "operator_id",
+            "lineageTag": "b1fb9ab6-6ae1-53ef-b4f2-78028a7c895e",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "shift_id",
             "dataType": "string",
-            "sourceColumn": "shift_id"
+            "sourceColumn": "shift_id",
+            "lineageTag": "cfc757cb-731f-5c03-a0d1-83192038086d",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "production_line",
             "dataType": "string",
-            "sourceColumn": "production_line"
+            "sourceColumn": "production_line",
+            "lineageTag": "9178c85f-6312-5c3d-8513-6d8050f821d5",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "planned_production_time_min",
             "dataType": "double",
-            "sourceColumn": "planned_production_time_min"
+            "sourceColumn": "planned_production_time_min",
+            "lineageTag": "7f3ee85a-e05e-54a8-b561-69f9d484901f",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "actual_run_time_min",
             "dataType": "double",
-            "sourceColumn": "actual_run_time_min"
+            "sourceColumn": "actual_run_time_min",
+            "lineageTag": "34a6371b-0e2f-56f0-8408-0583cbf0dc1f",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "downtime_min",
             "dataType": "double",
-            "sourceColumn": "downtime_min"
+            "sourceColumn": "downtime_min",
+            "lineageTag": "acedf41f-f6bd-570d-8b42-830c80133f4a",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "downtime_reason",
             "dataType": "string",
-            "sourceColumn": "downtime_reason"
+            "sourceColumn": "downtime_reason",
+            "lineageTag": "ca01b907-1310-5f39-a848-3f08b03242a8",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "ideal_cycle_time_sec",
             "dataType": "double",
-            "sourceColumn": "ideal_cycle_time_sec"
+            "sourceColumn": "ideal_cycle_time_sec",
+            "lineageTag": "c353b9c5-b360-5896-b03e-965456a1437e",
+            "summarizeBy": "average",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "actual_cycle_time_sec",
             "dataType": "double",
-            "sourceColumn": "actual_cycle_time_sec"
+            "sourceColumn": "actual_cycle_time_sec",
+            "lineageTag": "9ae97fc5-4c9f-54c5-972f-c7c241aba04c",
+            "summarizeBy": "average",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "total_units_produced",
             "dataType": "int64",
-            "sourceColumn": "total_units_produced"
+            "sourceColumn": "total_units_produced",
+            "lineageTag": "e10f323d-62c6-598a-ab44-cf24326c49fd",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "good_units",
             "dataType": "int64",
-            "sourceColumn": "good_units"
+            "sourceColumn": "good_units",
+            "lineageTag": "c5372f15-aa41-5a64-a57a-f61d25605d24",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "defect_units",
             "dataType": "int64",
-            "sourceColumn": "defect_units"
+            "sourceColumn": "defect_units",
+            "lineageTag": "fe11d273-2e2b-5533-86f8-2e0f821a04d4",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "availability",
             "dataType": "double",
-            "sourceColumn": "availability"
+            "sourceColumn": "availability",
+            "lineageTag": "0b86ae09-8e5e-50a0-9ce0-d5589ae98733",
+            "summarizeBy": "average",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "performance",
             "dataType": "double",
-            "sourceColumn": "performance"
+            "sourceColumn": "performance",
+            "lineageTag": "7ef9fbc3-8ebf-5991-b800-de5467ada0be",
+            "summarizeBy": "average",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "quality",
             "dataType": "double",
-            "sourceColumn": "quality"
+            "sourceColumn": "quality",
+            "lineageTag": "00a931f7-6d7c-54c7-81fe-760721ac999c",
+            "summarizeBy": "average",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "oee",
             "dataType": "double",
-            "sourceColumn": "oee"
+            "sourceColumn": "oee",
+            "lineageTag": "c6c1bcac-d724-50dc-adcc-516c7f849c37",
+            "summarizeBy": "average",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "scrap_rate",
             "dataType": "double",
-            "sourceColumn": "scrap_rate"
+            "sourceColumn": "scrap_rate",
+            "lineageTag": "4e1e2b33-6daa-5af8-a14a-0fdee260ed71",
+            "summarizeBy": "average",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "temperature_c",
             "dataType": "double",
-            "sourceColumn": "temperature_c"
+            "sourceColumn": "temperature_c",
+            "lineageTag": "8a0d8b71-ef12-5470-b17e-9445fcb146b8",
+            "summarizeBy": "average",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "vibration_mm_s",
             "dataType": "double",
-            "sourceColumn": "vibration_mm_s"
+            "sourceColumn": "vibration_mm_s",
+            "lineageTag": "e74feb72-55ef-5828-acd0-7e1bd4e2bfb7",
+            "summarizeBy": "average",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "energy_kwh",
             "dataType": "double",
-            "sourceColumn": "energy_kwh"
+            "sourceColumn": "energy_kwh",
+            "lineageTag": "43e9bcc4-f8ab-56d5-b745-cf1a6f9fbf62",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "energy_per_unit_kwh",
             "dataType": "double",
-            "sourceColumn": "energy_per_unit_kwh"
+            "sourceColumn": "energy_per_unit_kwh",
+            "lineageTag": "264569f4-9269-54dc-814c-f2f35077c5d4",
+            "summarizeBy": "average",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           }
         ],
         "partitions": [
@@ -157,102 +394,248 @@
               "type": "m",
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\fact_production.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
-                "    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\fact_production.csv\"),[Delimiter=\",\", Columns=28, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"record_id\", Int64.Type}, {\"date_key\", Int64.Type}, {\"timestamp\", type datetime}, {\"date\", type date}, {\"hour\", Int64.Type}, {\"machine_id\", type text}, {\"product_id\", type text}, {\"operator_id\", type text}, {\"shift_id\", type text}, {\"production_line\", type text}, {\"planned_production_time_min\", type number}, {\"actual_run_time_min\", type number}, {\"downtime_min\", type number}, {\"downtime_reason\", type text}, {\"ideal_cycle_time_sec\", type number}, {\"actual_cycle_time_sec\", type number}, {\"total_units_produced\", Int64.Type}, {\"good_units\", Int64.Type}, {\"defect_units\", Int64.Type}, {\"availability\", type number}, {\"performance\", type number}, {\"quality\", type number}, {\"oee\", type number}, {\"scrap_rate\", type number}, {\"temperature_c\", type number}, {\"vibration_mm_s\", type number}, {\"energy_kwh\", type number}, {\"energy_per_unit_kwh\", type number}})",
                 "in",
-                "    PromotedHeaders"
+                "    #\"Changed Type\""
               ]
             }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
           }
         ]
       },
       {
         "name": "dim_date",
-        "dataCategory": "Time",
+        "lineageTag": "d3a8a8c2-51b8-58e2-81b1-62c717c3ec09",
         "columns": [
           {
             "name": "date_key",
             "dataType": "int64",
-            "isKey": true,
-            "sourceColumn": "date_key"
+            "sourceColumn": "date_key",
+            "lineageTag": "aba87060-68c7-56c0-9d36-b943a48c4d2c",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0",
+            "isKey": true
           },
           {
             "name": "date",
             "dataType": "dateTime",
-            "sourceColumn": "date"
+            "sourceColumn": "date",
+            "lineageTag": "cda15b57-2c97-56dd-904f-47b589e03bb7",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "year",
             "dataType": "int64",
-            "sourceColumn": "year"
+            "sourceColumn": "year",
+            "lineageTag": "d1d190c0-8106-5070-a7c9-319a4f47959e",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "quarter",
             "dataType": "int64",
-            "sourceColumn": "quarter"
+            "sourceColumn": "quarter",
+            "lineageTag": "38bf2b55-2280-5637-bdb7-139f6882eff5",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "quarter_name",
             "dataType": "string",
-            "sourceColumn": "quarter_name"
+            "sourceColumn": "quarter_name",
+            "lineageTag": "a000c414-9481-5879-b7d1-43ec0d42a0dc",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "month",
             "dataType": "int64",
-            "sourceColumn": "month"
+            "sourceColumn": "month",
+            "lineageTag": "291baa06-38fe-5ade-8e05-2672adeb03f8",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "month_name",
             "dataType": "string",
             "sourceColumn": "month_name",
+            "lineageTag": "022813bf-b5c6-537e-ae3d-4215c9201a93",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
             "sortByColumn": "month"
           },
           {
             "name": "month_short",
             "dataType": "string",
             "sourceColumn": "month_short",
+            "lineageTag": "4a4f0970-a538-5392-973d-22a2df0de122",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
             "sortByColumn": "month"
           },
           {
             "name": "week_of_year",
             "dataType": "int64",
-            "sourceColumn": "week_of_year"
+            "sourceColumn": "week_of_year",
+            "lineageTag": "3f7af370-714f-5d13-b3d4-4ac89f1d6483",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "day_of_month",
             "dataType": "int64",
-            "sourceColumn": "day_of_month"
+            "sourceColumn": "day_of_month",
+            "lineageTag": "4c4516f8-2f0e-516f-8146-13fa3bc95b80",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "day_of_week",
             "dataType": "int64",
-            "sourceColumn": "day_of_week"
+            "sourceColumn": "day_of_week",
+            "lineageTag": "e699d5df-21be-519a-af30-d36475502c14",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "day_name",
             "dataType": "string",
             "sourceColumn": "day_name",
+            "lineageTag": "e9f58f8b-0987-58c9-9305-eb6edfa67c73",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
             "sortByColumn": "day_of_week"
           },
           {
             "name": "is_weekend",
             "dataType": "int64",
-            "sourceColumn": "is_weekend"
+            "sourceColumn": "is_weekend",
+            "lineageTag": "4442aa1e-bec1-540c-8096-b9ce7447cb2e",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "is_weekday",
             "dataType": "int64",
-            "sourceColumn": "is_weekday"
+            "sourceColumn": "is_weekday",
+            "lineageTag": "3c651c3f-7d5f-52be-a33a-c84219d8ddc4",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "fiscal_year",
             "dataType": "int64",
-            "sourceColumn": "fiscal_year"
+            "sourceColumn": "fiscal_year",
+            "lineageTag": "8dad8166-acdc-5338-98a8-e6cf6b52a2a4",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "fiscal_quarter",
             "dataType": "int64",
-            "sourceColumn": "fiscal_quarter"
+            "sourceColumn": "fiscal_quarter",
+            "lineageTag": "6feaa9bd-5581-5f22-add1-e9f90b019053",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           }
         ],
         "partitions": [
@@ -263,58 +646,132 @@
               "type": "m",
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\dim_date.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
-                "    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\dim_date.csv\"),[Delimiter=\",\", Columns=16, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"date_key\", Int64.Type}, {\"date\", type date}, {\"year\", Int64.Type}, {\"quarter\", Int64.Type}, {\"quarter_name\", type text}, {\"month\", Int64.Type}, {\"month_name\", type text}, {\"month_short\", type text}, {\"week_of_year\", Int64.Type}, {\"day_of_month\", Int64.Type}, {\"day_of_week\", Int64.Type}, {\"day_name\", type text}, {\"is_weekend\", Int64.Type}, {\"is_weekday\", Int64.Type}, {\"fiscal_year\", Int64.Type}, {\"fiscal_quarter\", Int64.Type}})",
                 "in",
-                "    PromotedHeaders"
+                "    #\"Changed Type\""
               ]
             }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
           }
         ]
       },
       {
         "name": "dim_machine",
+        "lineageTag": "72f83ea4-5ff5-58c1-82a8-ae5e2f4e6713",
         "columns": [
           {
             "name": "machine_key",
             "dataType": "string",
-            "isKey": true,
-            "sourceColumn": "machine_key"
+            "sourceColumn": "machine_key",
+            "lineageTag": "972077f2-1fcf-5b5f-bcb9-f7b4037af6c0",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "isKey": true
           },
           {
             "name": "machine_id",
             "dataType": "string",
-            "sourceColumn": "machine_id"
+            "sourceColumn": "machine_id",
+            "lineageTag": "c97d9afd-a35d-583a-9def-040a31acce1c",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "machine_type",
             "dataType": "string",
-            "sourceColumn": "machine_type"
+            "sourceColumn": "machine_type",
+            "lineageTag": "3b3ce24f-beb7-50c5-b53d-5b2ae69421c7",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "production_line",
             "dataType": "string",
-            "sourceColumn": "production_line"
+            "sourceColumn": "production_line",
+            "lineageTag": "c3f3d4bf-dae0-5548-911c-c733845899e5",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "manufacturer",
             "dataType": "string",
-            "sourceColumn": "manufacturer"
+            "sourceColumn": "manufacturer",
+            "lineageTag": "d697c4ef-f3ae-5c48-8583-c9e986fd9370",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "install_year",
             "dataType": "int64",
-            "sourceColumn": "install_year"
+            "sourceColumn": "install_year",
+            "lineageTag": "bffd3246-5e39-5cc5-815d-e462ec86c0b5",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "maintenance_interval_hrs",
             "dataType": "int64",
-            "sourceColumn": "maintenance_interval_hrs"
+            "sourceColumn": "maintenance_interval_hrs",
+            "lineageTag": "5023bd8e-d09d-5df6-a933-aa7b5d2c2b17",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "status",
             "dataType": "string",
-            "sourceColumn": "status"
+            "sourceColumn": "status",
+            "lineageTag": "0aa79763-9e31-5fa8-99bb-5e0c5829fd3e",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           }
         ],
         "partitions": [
@@ -325,48 +782,104 @@
               "type": "m",
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\dim_machine.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
-                "    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\dim_machine.csv\"),[Delimiter=\",\", Columns=8, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"machine_key\", type text}, {\"machine_id\", type text}, {\"machine_type\", type text}, {\"production_line\", type text}, {\"manufacturer\", type text}, {\"install_year\", Int64.Type}, {\"maintenance_interval_hrs\", Int64.Type}, {\"status\", type text}})",
                 "in",
-                "    PromotedHeaders"
+                "    #\"Changed Type\""
               ]
             }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
           }
         ]
       },
       {
         "name": "dim_product",
+        "lineageTag": "9f418bb3-f1ac-56a4-8950-c74ab469aed1",
         "columns": [
           {
             "name": "product_key",
             "dataType": "string",
-            "isKey": true,
-            "sourceColumn": "product_key"
+            "sourceColumn": "product_key",
+            "lineageTag": "3f8421ff-7d7a-5010-b274-b5b1f2cdb318",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "isKey": true
           },
           {
             "name": "product_id",
             "dataType": "string",
-            "sourceColumn": "product_id"
+            "sourceColumn": "product_id",
+            "lineageTag": "61931bff-c76b-5f49-8754-b594a08b3dfc",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "product_name",
             "dataType": "string",
-            "sourceColumn": "product_name"
+            "sourceColumn": "product_name",
+            "lineageTag": "54472888-567c-5cfa-a664-5a435b59b2bf",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "product_category",
             "dataType": "string",
-            "sourceColumn": "product_category"
+            "sourceColumn": "product_category",
+            "lineageTag": "e8dce270-9518-5f69-9550-7df8bdf55caf",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "target_cycle_time_sec",
             "dataType": "double",
-            "sourceColumn": "target_cycle_time_sec"
+            "sourceColumn": "target_cycle_time_sec",
+            "lineageTag": "be4d5c4b-8b4c-5c67-a1ef-fcc274fa3744",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "unit_cost_usd",
             "dataType": "double",
-            "sourceColumn": "unit_cost_usd"
+            "sourceColumn": "unit_cost_usd",
+            "lineageTag": "bb280c74-867a-5b05-8822-9c79fb941c11",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           }
         ],
         "partitions": [
@@ -377,53 +890,120 @@
               "type": "m",
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\dim_product.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
-                "    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\dim_product.csv\"),[Delimiter=\",\", Columns=6, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"product_key\", type text}, {\"product_id\", type text}, {\"product_name\", type text}, {\"product_category\", type text}, {\"target_cycle_time_sec\", type number}, {\"unit_cost_usd\", type number}})",
                 "in",
-                "    PromotedHeaders"
+                "    #\"Changed Type\""
               ]
             }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
           }
         ]
       },
       {
         "name": "dim_shift",
+        "lineageTag": "cf791a6c-34e5-5c0a-9db2-95d520faf69c",
         "columns": [
           {
             "name": "shift_key",
             "dataType": "string",
-            "isKey": true,
-            "sourceColumn": "shift_key"
+            "sourceColumn": "shift_key",
+            "lineageTag": "8512091d-4628-535f-94eb-1c5a4842b5b5",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "isKey": true
           },
           {
             "name": "shift_id",
             "dataType": "string",
-            "sourceColumn": "shift_id"
+            "sourceColumn": "shift_id",
+            "lineageTag": "3560e5ca-4918-55f2-84b3-79f15616b0bf",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "shift_name",
             "dataType": "string",
-            "sourceColumn": "shift_name"
+            "sourceColumn": "shift_name",
+            "lineageTag": "59be2b0f-307e-509b-9cf8-724cb1e5bf35",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "start_hour",
             "dataType": "int64",
-            "sourceColumn": "start_hour"
+            "sourceColumn": "start_hour",
+            "lineageTag": "7fc16f13-018e-5e4b-b06d-f143d1a4b952",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "end_hour",
             "dataType": "int64",
-            "sourceColumn": "end_hour"
+            "sourceColumn": "end_hour",
+            "lineageTag": "9d3beea0-2395-51a3-96f1-a824a76af9b3",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "hours_range",
             "dataType": "string",
-            "sourceColumn": "hours_range"
+            "sourceColumn": "hours_range",
+            "lineageTag": "23959738-3aab-5dd7-b79c-8ceb67b5f85b",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "is_day_shift",
             "dataType": "int64",
-            "sourceColumn": "is_day_shift"
+            "sourceColumn": "is_day_shift",
+            "lineageTag": "b49a0fdd-61ee-5912-a245-38063ce29744",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           }
         ],
         "partitions": [
@@ -434,48 +1014,106 @@
               "type": "m",
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\dim_shift.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
-                "    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\dim_shift.csv\"),[Delimiter=\",\", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"shift_key\", type text}, {\"shift_id\", type text}, {\"shift_name\", type text}, {\"start_hour\", Int64.Type}, {\"end_hour\", Int64.Type}, {\"hours_range\", type text}, {\"is_day_shift\", Int64.Type}})",
                 "in",
-                "    PromotedHeaders"
+                "    #\"Changed Type\""
               ]
             }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
           }
         ]
       },
       {
         "name": "dim_operator",
+        "lineageTag": "49bdc3ea-03f5-5e74-9dcf-9f837cd7972f",
         "columns": [
           {
             "name": "operator_key",
             "dataType": "string",
-            "isKey": true,
-            "sourceColumn": "operator_key"
+            "sourceColumn": "operator_key",
+            "lineageTag": "9ae2d5be-e08e-57f1-9af8-021c068f02c9",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "isKey": true
           },
           {
             "name": "operator_id",
             "dataType": "string",
-            "sourceColumn": "operator_id"
+            "sourceColumn": "operator_id",
+            "lineageTag": "147755be-a334-561d-982e-0125a2ca9021",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "operator_name",
             "dataType": "string",
-            "sourceColumn": "operator_name"
+            "sourceColumn": "operator_name",
+            "lineageTag": "45ec3371-e081-5a21-a6da-e7c1328eeccf",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "experience_level",
             "dataType": "string",
-            "sourceColumn": "experience_level"
+            "sourceColumn": "experience_level",
+            "lineageTag": "e7f95ae0-d581-5e59-a88f-9433ef49cb02",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "is_certified",
             "dataType": "int64",
-            "sourceColumn": "is_certified"
+            "sourceColumn": "is_certified",
+            "lineageTag": "b8b7c699-cd7a-5f8a-a6c4-ffb81cd5ef25",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           },
           {
             "name": "hire_year",
             "dataType": "int64",
-            "sourceColumn": "hire_year"
+            "sourceColumn": "hire_year",
+            "lineageTag": "e5dabfeb-9d76-50ee-98dd-829c97cd198a",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
           }
         ],
         "partitions": [
@@ -486,172 +1124,221 @@
               "type": "m",
               "expression": [
                 "let",
-                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\dim_operator.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
-                "    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\dim_operator.csv\"),[Delimiter=\",\", Columns=6, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"operator_key\", type text}, {\"operator_id\", type text}, {\"operator_name\", type text}, {\"experience_level\", type text}, {\"is_certified\", Int64.Type}, {\"hire_year\", Int64.Type}})",
                 "in",
-                "    PromotedHeaders"
+                "    #\"Changed Type\""
               ]
             }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
           }
         ]
       },
       {
         "name": "_Measures",
+        "lineageTag": "1854f537-13a2-5306-a2f7-9abc9a62cc75",
         "columns": [
           {
             "name": "MeasurePlaceholder",
             "dataType": "int64",
-            "isHidden": true,
-            "sourceColumn": "MeasurePlaceholder"
+            "sourceColumn": "MeasurePlaceholder",
+            "lineageTag": "704a7429-539c-50d5-8f23-ddf8273120e0",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0",
+            "isHidden": true
           }
         ],
         "measures": [
           {
             "name": "Availability",
             "expression": "DIVIDE(SUM(fact_production[actual_run_time_min]), SUM(fact_production[planned_production_time_min]), 0)",
-            "formatString": "0.0%",
-            "displayFolder": "01. Core OEE"
+            "displayFolder": "01. Core OEE",
+            "lineageTag": "9e6a4b16-1601-508a-b9f9-8a448561b90a",
+            "formatString": "0.0%"
           },
           {
             "name": "Performance Rate",
             "expression": "DIVIDE(SUMX(fact_production, fact_production[ideal_cycle_time_sec] * fact_production[total_units_produced]), SUM(fact_production[actual_run_time_min]) * 60, 0)",
-            "formatString": "0.0%",
-            "displayFolder": "01. Core OEE"
+            "displayFolder": "01. Core OEE",
+            "lineageTag": "54265275-c116-59ad-95dc-b7563a4ee624",
+            "formatString": "0.0%"
           },
           {
             "name": "Quality Rate",
             "expression": "DIVIDE(SUM(fact_production[good_units]), SUM(fact_production[total_units_produced]), 0)",
-            "formatString": "0.0%",
-            "displayFolder": "01. Core OEE"
+            "displayFolder": "01. Core OEE",
+            "lineageTag": "433ebaa7-5068-5f30-b7af-5115bfd4b5d2",
+            "formatString": "0.0%"
           },
           {
             "name": "OEE",
             "expression": "VAR _Availability = [Availability] VAR _Performance = [Performance Rate] VAR _Quality = [Quality Rate] RETURN _Availability * _Performance * _Quality",
-            "formatString": "0.0%",
-            "displayFolder": "01. Core OEE"
+            "displayFolder": "01. Core OEE",
+            "lineageTag": "ffe134a8-a452-5a06-bc8a-5fe22816ce42",
+            "formatString": "0.0%"
           },
           {
             "name": "Total Units",
             "expression": "SUM(fact_production[total_units_produced])",
-            "formatString": "#,0",
-            "displayFolder": "02. Production"
+            "displayFolder": "02. Production",
+            "lineageTag": "f8306b9e-589e-5a95-a826-67acd4eb2c9c",
+            "formatString": "#,0"
           },
           {
             "name": "Good Units",
             "expression": "SUM(fact_production[good_units])",
-            "formatString": "#,0",
-            "displayFolder": "02. Production"
+            "displayFolder": "02. Production",
+            "lineageTag": "36add661-ace3-595d-a336-ec478041283c",
+            "formatString": "#,0"
           },
           {
             "name": "Defect Units",
             "expression": "SUM(fact_production[defect_units])",
-            "formatString": "#,0",
-            "displayFolder": "02. Production"
+            "displayFolder": "02. Production",
+            "lineageTag": "be33172a-662b-5a7f-a818-beea8cafaaa4",
+            "formatString": "#,0"
           },
           {
             "name": "Scrap Rate",
             "expression": "DIVIDE([Defect Units], [Total Units], 0)",
-            "formatString": "0.00%",
-            "displayFolder": "02. Production"
+            "displayFolder": "02. Production",
+            "lineageTag": "20f49337-aecb-5d13-9bc3-5a75c178dbf9",
+            "formatString": "0.00%"
           },
           {
             "name": "Production Value",
             "expression": "SUMX(fact_production, fact_production[good_units] * RELATED(dim_product[unit_cost_usd]))",
-            "formatString": "$#,0",
-            "displayFolder": "02. Production"
+            "displayFolder": "02. Production",
+            "lineageTag": "04ea7cfd-c2d7-5d38-aabe-48b8b527306b",
+            "formatString": "$#,0"
+          },
+          {
+            "name": "Cost of Poor Quality",
+            "expression": "SUMX(fact_production, fact_production[defect_units] * RELATED(dim_product[unit_cost_usd]))",
+            "displayFolder": "02. Production",
+            "lineageTag": "6ce1d704-23bb-5d53-9a21-02b38cc98e76",
+            "formatString": "$#,0"
           },
           {
             "name": "Downtime Hours",
             "expression": "DIVIDE(SUM(fact_production[downtime_min]), 60, 0)",
-            "formatString": "#,0.0",
-            "displayFolder": "03. Downtime"
+            "displayFolder": "03. Downtime",
+            "lineageTag": "df01a0fa-2bf3-5607-b9c5-e3f97707ef34",
+            "formatString": "#,0.0"
           },
           {
             "name": "Downtime %",
             "expression": "DIVIDE(SUM(fact_production[downtime_min]), SUM(fact_production[planned_production_time_min]), 0)",
-            "formatString": "0.00%",
-            "displayFolder": "03. Downtime"
+            "displayFolder": "03. Downtime",
+            "lineageTag": "0d7b20b4-fa78-5802-a958-19062fcbff6c",
+            "formatString": "0.00%"
           },
           {
             "name": "Unplanned Downtime",
             "expression": "DIVIDE(CALCULATE(SUM(fact_production[downtime_min]), NOT(fact_production[downtime_reason] IN {\"Planned Maintenance\", \"No Downtime\"})), 60, 0)",
-            "formatString": "#,0.0",
-            "displayFolder": "03. Downtime"
+            "displayFolder": "03. Downtime",
+            "lineageTag": "54d3181c-8a02-5596-9660-9a13e757e7e7",
+            "formatString": "#,0.0"
           },
           {
             "name": "OEE PM",
             "expression": "CALCULATE([OEE], DATEADD(dim_date[date], -1, MONTH))",
-            "formatString": "0.0%",
-            "displayFolder": "04. Time Intelligence"
+            "displayFolder": "04. Time Intelligence",
+            "lineageTag": "00710d7f-cbef-5395-9cb4-cfd577213c89",
+            "formatString": "0.0%"
           },
           {
             "name": "OEE MoM Change",
             "expression": "VAR _Current = [OEE] VAR _Previous = [OEE PM] RETURN IF(NOT(ISBLANK(_Previous)), _Current - _Previous, BLANK())",
-            "formatString": "+0.0%;-0.0%;0.0%",
-            "displayFolder": "04. Time Intelligence"
+            "displayFolder": "04. Time Intelligence",
+            "lineageTag": "193736c1-0c74-5c90-b385-2d3380c99f2a",
+            "formatString": "+0.0%;-0.0%;0.0%"
           },
           {
             "name": "OEE MoM %",
             "expression": "DIVIDE([OEE MoM Change], [OEE PM], BLANK())",
-            "formatString": "+0.0%;-0.0%;0.0%",
-            "displayFolder": "04. Time Intelligence"
+            "displayFolder": "04. Time Intelligence",
+            "lineageTag": "188f74ce-41e1-5e53-bb5f-0facdd6e6e8c",
+            "formatString": "+0.0%;-0.0%;0.0%"
           },
           {
             "name": "Good Units YTD",
             "expression": "CALCULATE([Good Units], DATESYTD(dim_date[date]))",
-            "formatString": "#,0",
-            "displayFolder": "04. Time Intelligence"
+            "displayFolder": "04. Time Intelligence",
+            "lineageTag": "2fbe35d2-1521-5cf8-a4c7-a3d74ea22b1b",
+            "formatString": "#,0"
           },
           {
             "name": "Running Total Units",
             "expression": "CALCULATE([Good Units], FILTER(ALL(dim_date), dim_date[date] <= MAX(dim_date[date])))",
-            "formatString": "#,0",
-            "displayFolder": "04. Time Intelligence"
+            "displayFolder": "04. Time Intelligence",
+            "lineageTag": "8033b669-a295-5d50-89b0-a5caa492a83b",
+            "formatString": "#,0"
           },
           {
             "name": "Total Energy kWh",
             "expression": "SUM(fact_production[energy_kwh])",
-            "formatString": "#,0.0",
-            "displayFolder": "05. Reliability & Energy"
+            "displayFolder": "05. Reliability & Energy",
+            "lineageTag": "e21cb707-7146-550d-ab63-da3a58d2c4db",
+            "formatString": "#,0.0"
           },
           {
             "name": "Energy per Unit",
             "expression": "DIVIDE([Total Energy kWh], [Good Units], 0)",
-            "formatString": "0.000",
-            "displayFolder": "05. Reliability & Energy"
+            "displayFolder": "05. Reliability & Energy",
+            "lineageTag": "73023221-54b5-5c7f-85a7-81b2b3e89a53",
+            "formatString": "0.000"
           },
           {
             "name": "Energy Efficiency",
             "expression": "DIVIDE([Good Units], [Total Energy kWh], 0)",
-            "formatString": "0.00",
-            "displayFolder": "05. Reliability & Energy"
+            "displayFolder": "05. Reliability & Energy",
+            "lineageTag": "7eb90409-ad68-502c-a0eb-487fe188872d",
+            "formatString": "0.00"
           },
           {
             "name": "Failure Count",
             "expression": "CALCULATE(COUNTROWS(fact_production), fact_production[downtime_reason] = \"Equipment Failure\")",
-            "formatString": "#,0",
-            "displayFolder": "05. Reliability & Energy"
+            "displayFolder": "05. Reliability & Energy",
+            "lineageTag": "836159e7-96f2-574d-9116-6c9f3e07cd3b",
+            "formatString": "#,0"
           },
           {
             "name": "MTBF Hours",
             "expression": "DIVIDE(SUM(fact_production[actual_run_time_min]) / 60, [Failure Count], SUM(fact_production[actual_run_time_min]) / 60)",
-            "formatString": "#,0.0",
-            "displayFolder": "05. Reliability & Energy"
+            "displayFolder": "05. Reliability & Energy",
+            "lineageTag": "5fd572bd-4e58-555d-b234-d8500be398c8",
+            "formatString": "#,0.0"
           },
           {
             "name": "OEE Status",
             "expression": "SWITCH(TRUE(), [OEE] >= 0.85, \"World Class\", [OEE] >= 0.75, \"Good\", [OEE] >= 0.65, \"Needs Improvement\", \"Critical\")",
-            "displayFolder": "06. KPI Formatting"
+            "displayFolder": "06. KPI Formatting",
+            "lineageTag": "87fe9f9d-3e36-5b3f-a52c-0f11b1bce902"
           },
           {
             "name": "OEE Color",
             "expression": "SWITCH(TRUE(), [OEE] >= 0.85, \"#00B140\", [OEE] >= 0.75, \"#FFC72C\", [OEE] >= 0.65, \"#F97316\", \"#E4002B\")",
-            "displayFolder": "06. KPI Formatting"
+            "displayFolder": "06. KPI Formatting",
+            "lineageTag": "880065f0-cdc8-53a7-9c9f-18f8388cbe62"
           },
           {
             "name": "OEE Trend Arrow",
             "expression": "IF([OEE MoM Change] > 0, \"\u25b2 \" & FORMAT(ABS([OEE MoM Change]) * 100, \"0.0\") & \"%\", \"\u25bc \" & FORMAT(ABS([OEE MoM Change]) * 100, \"0.0\") & \"%\")",
-            "displayFolder": "06. KPI Formatting"
+            "displayFolder": "06. KPI Formatting",
+            "lineageTag": "545848e7-f91f-5bf1-a879-c8e07a282c12"
           }
         ],
         "partitions": [
@@ -659,53 +1346,74 @@
             "name": "_Measures",
             "mode": "import",
             "source": {
-              "type": "calculated",
-              "expression": "ROW(\"MeasurePlaceholder\", 1)"
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #table(type table [MeasurePlaceholder = Int64.Type], {{1}})",
+                "in",
+                "    Source"
+              ]
             }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
           }
         ]
       }
     ],
     "relationships": [
       {
-        "name": "rel_fact_date",
+        "name": "8cb1e08c-855a-53d5-b9e8-122672d341df",
         "fromTable": "fact_production",
         "fromColumn": "date_key",
         "toTable": "dim_date",
-        "toColumn": "date_key",
-        "crossFilteringBehavior": "oneDirection"
+        "toColumn": "date_key"
       },
       {
-        "name": "rel_fact_machine",
+        "name": "ecd846ca-058c-5c4d-a51e-49f51c447ea4",
         "fromTable": "fact_production",
         "fromColumn": "machine_id",
         "toTable": "dim_machine",
-        "toColumn": "machine_key",
-        "crossFilteringBehavior": "oneDirection"
+        "toColumn": "machine_key"
       },
       {
-        "name": "rel_fact_product",
+        "name": "1b3c1032-8594-52c7-b66d-275cd22d235f",
         "fromTable": "fact_production",
         "fromColumn": "product_id",
         "toTable": "dim_product",
-        "toColumn": "product_key",
-        "crossFilteringBehavior": "oneDirection"
+        "toColumn": "product_key"
       },
       {
-        "name": "rel_fact_shift",
+        "name": "6c9dc14e-205c-5c29-a297-896968ddbe67",
         "fromTable": "fact_production",
         "fromColumn": "shift_id",
         "toTable": "dim_shift",
-        "toColumn": "shift_key",
-        "crossFilteringBehavior": "oneDirection"
+        "toColumn": "shift_key"
       },
       {
-        "name": "rel_fact_operator",
+        "name": "a19360a0-24c3-590a-bd18-fca124cadd36",
         "fromTable": "fact_production",
         "fromColumn": "operator_id",
         "toTable": "dim_operator",
-        "toColumn": "operator_key",
-        "crossFilteringBehavior": "oneDirection"
+        "toColumn": "operator_key"
+      }
+    ],
+    "cultures": [
+      {
+        "name": "en-US"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"fact_production\",\"dim_date\",\"dim_machine\",\"dim_product\",\"dim_shift\",\"dim_operator\",\"_Measures\"]"
       }
     ]
   }

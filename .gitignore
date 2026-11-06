@@ -23,7 +23,6 @@ desktop.ini
 .ipynb_checkpoints/
 
 # Power BI temp files
-*.pbit
 *.pbix.tmp
 
 # Large data files (keep CSVs under 100MB for GitHub)

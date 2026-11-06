@@ -1,0 +1,298 @@
+{
+  "id": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "name": "SharedResources",
+        "type": 2,
+        "items": [
+          {
+            "type": 202,
+            "path": "BaseThemes/Fluent2-CY26SU08.json",
+            "name": "Fluent2-CY26SU08"
+          }
+        ],
+        "disabled": false
+      }
+    },
+    {
+      "resourcePackage": {
+        "name": "RegisteredResources",
+        "type": 1,
+        "items": [
+          {
+            "type": 100,
+            "path": "main_dashboard.png",
+            "name": "main_dashboard.png"
+          },
+          {
+            "type": 100,
+            "path": "oee_trends.png",
+            "name": "oee_trends.png"
+          },
+          {
+            "type": 100,
+            "path": "downtime_pareto.png",
+            "name": "downtime_pareto.png"
+          },
+          {
+            "type": 100,
+            "path": "sensor_correlation.png",
+            "name": "sensor_correlation.png"
+          },
+          {
+            "type": 100,
+            "path": "shift_performance.png",
+            "name": "shift_performance.png"
+          },
+          {
+            "type": 100,
+            "path": "machine_reliability.png",
+            "name": "machine_reliability.png"
+          }
+        ],
+        "disabled": false
+      }
+    }
+  ],
+  "sections": [
+    {
+      "id": 0,
+      "name": "f045d8df6a45c261c601",
+      "displayName": "1. Live Interactive OEE Studio",
+      "filters": "[]",
+      "ordinal": 0,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 100,
+          "width": 295,
+          "height": 135,
+          "config": "{\"name\": \"vc_card_oee\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 100, \"width\": 295, \"height\": 135, \"tabOrder\": 100}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.OEE\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}, \"Name\": \"_Measures.OEE\", \"NativeReferenceName\": \"OEE\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 330,
+          "y": 20,
+          "z": 200,
+          "width": 295,
+          "height": 135,
+          "config": "{\"name\": \"vc_card_avail\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 330, \"y\": 20, \"z\": 200, \"width\": 295, \"height\": 135, \"tabOrder\": 200}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Availability\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Availability\"}, \"Name\": \"_Measures.Availability\", \"NativeReferenceName\": \"Availability\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 640,
+          "y": 20,
+          "z": 300,
+          "width": 295,
+          "height": 135,
+          "config": "{\"name\": \"vc_card_perf\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 640, \"y\": 20, \"z\": 300, \"width\": 295, \"height\": 135, \"tabOrder\": 300}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Performance Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Performance Rate\"}, \"Name\": \"_Measures.Performance Rate\", \"NativeReferenceName\": \"Performance Rate\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 950,
+          "y": 20,
+          "z": 400,
+          "width": 295,
+          "height": 135,
+          "config": "{\"name\": \"vc_card_qual\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 950, \"y\": 20, \"z\": 400, \"width\": 295, \"height\": 135, \"tabOrder\": 400}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Quality Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Quality Rate\"}, \"Name\": \"_Measures.Quality Rate\", \"NativeReferenceName\": \"Quality Rate\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1260,
+          "y": 20,
+          "z": 500,
+          "width": 310,
+          "height": 135,
+          "config": "{\"name\": \"vc_card_units\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1260, \"y\": 20, \"z\": 500, \"width\": 310, \"height\": 135, \"tabOrder\": 500}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Good Units\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Good Units\"}, \"Name\": \"_Measures.Good Units\", \"NativeReferenceName\": \"Good Units\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1585,
+          "y": 20,
+          "z": 600,
+          "width": 315,
+          "height": 135,
+          "config": "{\"name\": \"vc_card_val\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1585, \"y\": 20, \"z\": 600, \"width\": 315, \"height\": 135, \"tabOrder\": 600}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Production Value\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Production Value\"}, \"Name\": \"_Measures.Production Value\", \"NativeReferenceName\": \"Production Value\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 170,
+          "z": 700,
+          "width": 295,
+          "height": 280,
+          "config": "{\"name\": \"vc_sl_line\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 170, \"z\": 700, \"width\": 295, \"height\": 280, \"tabOrder\": 700}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_machine.production_line\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"dim_machine\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"production_line\"}, \"Name\": \"dim_machine.production_line\", \"NativeReferenceName\": \"production_line\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Basic'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 465,
+          "z": 800,
+          "width": 295,
+          "height": 250,
+          "config": "{\"name\": \"vc_sl_shift\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 465, \"z\": 800, \"width\": 295, \"height\": 250, \"tabOrder\": 800}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_shift.shift_name\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"dim_shift\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"shift_name\"}, \"Name\": \"dim_shift.shift_name\", \"NativeReferenceName\": \"shift_name\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Basic'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 730,
+          "z": 900,
+          "width": 295,
+          "height": 325,
+          "config": "{\"name\": \"vc_sl_cat\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 730, \"z\": 900, \"width\": 295, \"height\": 325, \"tabOrder\": 900}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_product.product_category\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"dim_product\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"product_category\"}, \"Name\": \"dim_product.product_category\", \"NativeReferenceName\": \"product_category\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Basic'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 330,
+          "y": 170,
+          "z": 1000,
+          "width": 780,
+          "height": 430,
+          "config": "{\"name\": \"vc_col_month\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 330, \"y\": 170, \"z\": 1000, \"width\": 780, \"height\": 430, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_date.month_short\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.OEE\"}, {\"queryRef\": \"_Measures.Availability\"}, {\"queryRef\": \"_Measures.Performance Rate\"}, {\"queryRef\": \"_Measures.Quality Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_date\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"month_short\"}, \"Name\": \"dim_date.month_short\", \"NativeReferenceName\": \"month_short\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}, \"Name\": \"_Measures.OEE\", \"NativeReferenceName\": \"OEE\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Availability\"}, \"Name\": \"_Measures.Availability\", \"NativeReferenceName\": \"Availability\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Performance Rate\"}, \"Name\": \"_Measures.Performance Rate\", \"NativeReferenceName\": \"Performance Rate\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Quality Rate\"}, \"Name\": \"_Measures.Quality Rate\", \"NativeReferenceName\": \"Quality Rate\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 330,
+          "y": 615,
+          "z": 1100,
+          "width": 780,
+          "height": 440,
+          "config": "{\"name\": \"vc_bar_dt\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 330, \"y\": 615, \"z\": 1100, \"width\": 780, \"height\": 440, \"tabOrder\": 1100}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_production.downtime_reason\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Downtime Hours\"}, {\"queryRef\": \"_Measures.Unplanned Downtime\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"fact_production\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"downtime_reason\"}, \"Name\": \"fact_production.downtime_reason\", \"NativeReferenceName\": \"downtime_reason\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Downtime Hours\"}, \"Name\": \"_Measures.Downtime Hours\", \"NativeReferenceName\": \"Downtime Hours\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Unplanned Downtime\"}, \"Name\": \"_Measures.Unplanned Downtime\", \"NativeReferenceName\": \"Unplanned Downtime\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Downtime Hours\"}}}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1125,
+          "y": 170,
+          "z": 1200,
+          "width": 775,
+          "height": 430,
+          "config": "{\"name\": \"vc_bar_mach\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1125, \"y\": 170, \"z\": 1200, \"width\": 775, \"height\": 430, \"tabOrder\": 1200}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_machine.machine_id\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.OEE\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_machine\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"machine_id\"}, \"Name\": \"dim_machine.machine_id\", \"NativeReferenceName\": \"machine_id\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}, \"Name\": \"_Measures.OEE\", \"NativeReferenceName\": \"OEE\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}}}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1125,
+          "y": 615,
+          "z": 1300,
+          "width": 775,
+          "height": 440,
+          "config": "{\"name\": \"vc_tbl_mach\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1125, \"y\": 615, \"z\": 1300, \"width\": 775, \"height\": 440, \"tabOrder\": 1300}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_machine.machine_id\"}, {\"queryRef\": \"dim_machine.production_line\"}, {\"queryRef\": \"dim_machine.machine_type\"}, {\"queryRef\": \"_Measures.OEE\"}, {\"queryRef\": \"_Measures.Availability\"}, {\"queryRef\": \"_Measures.Performance Rate\"}, {\"queryRef\": \"_Measures.Quality Rate\"}, {\"queryRef\": \"_Measures.Good Units\"}, {\"queryRef\": \"_Measures.Scrap Rate\"}, {\"queryRef\": \"_Measures.Downtime Hours\"}, {\"queryRef\": \"_Measures.MTBF Hours\"}, {\"queryRef\": \"_Measures.OEE Status\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dim_machine\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"machine_id\"}, \"Name\": \"dim_machine.machine_id\", \"NativeReferenceName\": \"machine_id\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"production_line\"}, \"Name\": \"dim_machine.production_line\", \"NativeReferenceName\": \"production_line\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"machine_type\"}, \"Name\": \"dim_machine.machine_type\", \"NativeReferenceName\": \"machine_type\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}, \"Name\": \"_Measures.OEE\", \"NativeReferenceName\": \"OEE\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Availability\"}, \"Name\": \"_Measures.Availability\", \"NativeReferenceName\": \"Availability\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Performance Rate\"}, \"Name\": \"_Measures.Performance Rate\", \"NativeReferenceName\": \"Performance Rate\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Quality Rate\"}, \"Name\": \"_Measures.Quality Rate\", \"NativeReferenceName\": \"Quality Rate\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Good Units\"}, \"Name\": \"_Measures.Good Units\", \"NativeReferenceName\": \"Good Units\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Scrap Rate\"}, \"Name\": \"_Measures.Scrap Rate\", \"NativeReferenceName\": \"Scrap Rate\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Downtime Hours\"}, \"Name\": \"_Measures.Downtime Hours\", \"NativeReferenceName\": \"Downtime Hours\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"MTBF Hours\"}, \"Name\": \"_Measures.MTBF Hours\", \"NativeReferenceName\": \"MTBF Hours\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE Status\"}, \"Name\": \"_Measures.OEE Status\", \"NativeReferenceName\": \"OEE Status\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"OEE\"}}}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        }
+      ],
+      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#F3F4F6\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}]}}",
+      "displayOption": 1,
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": 1,
+      "name": "f045d8df6a45c261c602",
+      "displayName": "2. Executive OEE Overview",
+      "filters": "[]",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 15,
+          "z": 100,
+          "width": 1880,
+          "height": 1050,
+          "config": "{\"name\": \"vc_exec_main\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 15, \"z\": 100, \"width\": 1880, \"height\": 1050, \"tabOrder\": 100}}], \"singleVisual\": {\"visualType\": \"image\", \"objects\": {\"general\": [{\"properties\": {\"imageUrl\": {\"expr\": {\"ResourcePackageItem\": {\"PackageName\": \"RegisteredResources\", \"PackageType\": 1, \"ItemName\": \"main_dashboard.png\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ],
+      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#0B101E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}]}}",
+      "displayOption": 1,
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": 2,
+      "name": "f045d8df6a45c261c603",
+      "displayName": "3. OEE Component Trends",
+      "filters": "[]",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "x": 60,
+          "y": 20,
+          "z": 100,
+          "width": 1800,
+          "height": 1040,
+          "config": "{\"name\": \"vc_oee_trends\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 60, \"y\": 20, \"z\": 100, \"width\": 1800, \"height\": 1040, \"tabOrder\": 100}}], \"singleVisual\": {\"visualType\": \"image\", \"objects\": {\"general\": [{\"properties\": {\"imageUrl\": {\"expr\": {\"ResourcePackageItem\": {\"PackageName\": \"RegisteredResources\", \"PackageType\": 1, \"ItemName\": \"oee_trends.png\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ],
+      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#0B101E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}]}}",
+      "displayOption": 1,
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": 3,
+      "name": "f045d8df6a45c261c604",
+      "displayName": "4. Downtime Pareto & MTBF",
+      "filters": "[]",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 80,
+          "z": 100,
+          "width": 930,
+          "height": 900,
+          "config": "{\"name\": \"vc_pareto\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 80, \"z\": 100, \"width\": 930, \"height\": 900, \"tabOrder\": 100}}], \"singleVisual\": {\"visualType\": \"image\", \"objects\": {\"general\": [{\"properties\": {\"imageUrl\": {\"expr\": {\"ResourcePackageItem\": {\"PackageName\": \"RegisteredResources\", \"PackageType\": 1, \"ItemName\": \"downtime_pareto.png\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 970,
+          "y": 80,
+          "z": 200,
+          "width": 930,
+          "height": 900,
+          "config": "{\"name\": \"vc_mtbf\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 970, \"y\": 80, \"z\": 200, \"width\": 930, \"height\": 900, \"tabOrder\": 200}}], \"singleVisual\": {\"visualType\": \"image\", \"objects\": {\"general\": [{\"properties\": {\"imageUrl\": {\"expr\": {\"ResourcePackageItem\": {\"PackageName\": \"RegisteredResources\", \"PackageType\": 1, \"ItemName\": \"machine_reliability.png\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ],
+      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#0B101E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}]}}",
+      "displayOption": 1,
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": 4,
+      "name": "f045d8df6a45c261c605",
+      "displayName": "5. Sensor & Shift ANOVA",
+      "filters": "[]",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "x": 80,
+          "y": 20,
+          "z": 100,
+          "width": 1760,
+          "height": 510,
+          "config": "{\"name\": \"vc_sensor\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 80, \"y\": 20, \"z\": 100, \"width\": 1760, \"height\": 510, \"tabOrder\": 100}}], \"singleVisual\": {\"visualType\": \"image\", \"objects\": {\"general\": [{\"properties\": {\"imageUrl\": {\"expr\": {\"ResourcePackageItem\": {\"PackageName\": \"RegisteredResources\", \"PackageType\": 1, \"ItemName\": \"sensor_correlation.png\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 80,
+          "y": 550,
+          "z": 200,
+          "width": 1760,
+          "height": 510,
+          "config": "{\"name\": \"vc_shift\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 80, \"y\": 550, \"z\": 200, \"width\": 1760, \"height\": 510, \"tabOrder\": 200}}], \"singleVisual\": {\"visualType\": \"image\", \"objects\": {\"general\": [{\"properties\": {\"imageUrl\": {\"expr\": {\"ResourcePackageItem\": {\"PackageName\": \"RegisteredResources\", \"PackageType\": 1, \"ItemName\": \"shift_performance.png\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ],
+      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": \"#0B101E\"}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}]}}",
+      "displayOption": 1,
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "config": "{\"version\": \"5.76\", \"themeCollection\": {\"baseTheme\": {\"name\": \"Fluent2-CY26SU08\", \"version\": {\"visual\": \"2.12.0\", \"report\": \"3.4.0\", \"page\": \"2.3.1\"}, \"type\": 2}}, \"activeSectionIndex\": 0, \"defaultDrillFilterOtherVisuals\": true, \"settings\": {\"useNewFilterPaneExperience\": true, \"allowChangeFilterTypes\": true, \"useStylableVisualContainerHeader\": true, \"queryLimitOption\": 6, \"useEnhancedTooltips\": true, \"exportDataMode\": 1, \"useDefaultAggregateDisplayName\": true}, \"objects\": {\"section\": [{\"properties\": {\"verticalAlignment\": {\"expr\": {\"Literal\": {\"Value\": \"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0
+}
