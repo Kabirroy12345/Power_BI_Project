@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../Manufacturing_OEE_Dashboard.SemanticModel"
+    },
+    "byConnection": null
+  }
+}

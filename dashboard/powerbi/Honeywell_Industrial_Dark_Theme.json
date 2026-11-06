@@ -1,0 +1,94 @@
+{
+  "name": "Honeywell Industrial Dark Theme",
+  "dataColors": [
+    "#00A3E0",
+    "#00B140",
+    "#E4002B",
+    "#FFC72C",
+    "#8B5CF6",
+    "#F97316",
+    "#06B6D4",
+    "#1B365D"
+  ],
+  "background": "#0B101E",
+  "foreground": "#F8FAFC",
+  "tableAccent": "#00A3E0",
+  "good": "#00B140",
+  "neutral": "#FFC72C",
+  "bad": "#E4002B",
+  "maximum": "#00B140",
+  "center": "#FFC72C",
+  "minimum": "#E4002B",
+  "textClasses": {
+    "callout": {
+      "fontSize": 28,
+      "fontFace": "Segoe UI Bold",
+      "color": "#F8FAFC"
+    },
+    "title": {
+      "fontSize": 13,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#F8FAFC"
+    },
+    "header": {
+      "fontSize": 11,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#94A3B8"
+    },
+    "label": {
+      "fontSize": 10,
+      "fontFace": "Segoe UI",
+      "color": "#94A3B8"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#151D30"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#2A3655"
+              }
+            },
+            "radius": 8
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#0B101E"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#070B14"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

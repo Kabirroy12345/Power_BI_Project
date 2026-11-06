@@ -1,0 +1,242 @@
+// ============================================================================
+// MANUFACTURING OPERATIONS & OEE ANALYTICS — COMPLETE DAX MEASURES (_Measures)
+// Author: Kabir Roy
+// Star Schema Tables: fact_production, dim_date, dim_machine, dim_product, dim_shift, dim_operator
+// ============================================================================
+
+// --- FOLDER: 01. Core OEE Measures ---
+
+MEASURE '_Measures'[Availability] =
+    DIVIDE(
+        SUM(fact_production[actual_run_time_min]),
+        SUM(fact_production[planned_production_time_min]),
+        0
+    )
+    FORMAT_STRING = "0.0%"
+    DISPLAY_FOLDER = "01. Core OEE"
+
+MEASURE '_Measures'[Performance Rate] =
+    DIVIDE(
+        SUMX(
+            fact_production,
+            fact_production[ideal_cycle_time_sec] * fact_production[total_units_produced]
+        ),
+        SUM(fact_production[actual_run_time_min]) * 60,
+        0
+    )
+    FORMAT_STRING = "0.0%"
+    DISPLAY_FOLDER = "01. Core OEE"
+
+MEASURE '_Measures'[Quality Rate] =
+    DIVIDE(
+        SUM(fact_production[good_units]),
+        SUM(fact_production[total_units_produced]),
+        0
+    )
+    FORMAT_STRING = "0.0%"
+    DISPLAY_FOLDER = "01. Core OEE"
+
+MEASURE '_Measures'[OEE] =
+    VAR _Availability = [Availability]
+    VAR _Performance = [Performance Rate]
+    VAR _Quality = [Quality Rate]
+    RETURN
+        _Availability * _Performance * _Quality
+    FORMAT_STRING = "0.0%"
+    DISPLAY_FOLDER = "01. Core OEE"
+
+// --- FOLDER: 02. Production Measures ---
+
+MEASURE '_Measures'[Total Units] =
+    SUM(fact_production[total_units_produced])
+    FORMAT_STRING = "#,0"
+    DISPLAY_FOLDER = "02. Production"
+
+MEASURE '_Measures'[Good Units] =
+    SUM(fact_production[good_units])
+    FORMAT_STRING = "#,0"
+    DISPLAY_FOLDER = "02. Production"
+
+MEASURE '_Measures'[Defect Units] =
+    SUM(fact_production[defect_units])
+    FORMAT_STRING = "#,0"
+    DISPLAY_FOLDER = "02. Production"
+
+MEASURE '_Measures'[Scrap Rate] =
+    DIVIDE(
+        [Defect Units],
+        [Total Units],
+        0
+    )
+    FORMAT_STRING = "0.00%"
+    DISPLAY_FOLDER = "02. Production"
+
+MEASURE '_Measures'[Production Value] =
+    SUMX(
+        fact_production,
+        fact_production[good_units] * RELATED(dim_product[unit_cost_usd])
+    )
+    FORMAT_STRING = "$#,0"
+    DISPLAY_FOLDER = "02. Production"
+
+MEASURE '_Measures'[Cost of Poor Quality] =
+    SUMX(
+        fact_production,
+        fact_production[defect_units] * RELATED(dim_product[unit_cost_usd])
+    )
+    FORMAT_STRING = "$#,0"
+    DISPLAY_FOLDER = "02. Production"
+
+// --- FOLDER: 03. Downtime Measures ---
+
+MEASURE '_Measures'[Downtime Hours] =
+    DIVIDE(
+        SUM(fact_production[downtime_min]),
+        60,
+        0
+    )
+    FORMAT_STRING = "#,0.0"
+    DISPLAY_FOLDER = "03. Downtime"
+
+MEASURE '_Measures'[Downtime %] =
+    DIVIDE(
+        SUM(fact_production[downtime_min]),
+        SUM(fact_production[planned_production_time_min]),
+        0
+    )
+    FORMAT_STRING = "0.00%"
+    DISPLAY_FOLDER = "03. Downtime"
+
+MEASURE '_Measures'[Unplanned Downtime] =
+    DIVIDE(
+        CALCULATE(
+            SUM(fact_production[downtime_min]),
+            NOT(fact_production[downtime_reason] IN {"Planned Maintenance", "No Downtime"})
+        ),
+        60,
+        0
+    )
+    FORMAT_STRING = "#,0.0"
+    DISPLAY_FOLDER = "03. Downtime"
+
+// --- FOLDER: 04. Time Intelligence Measures ---
+
+MEASURE '_Measures'[OEE PM] =
+    CALCULATE(
+        [OEE],
+        DATEADD(dim_date[date], -1, MONTH)
+    )
+    FORMAT_STRING = "0.0%"
+    DISPLAY_FOLDER = "04. Time Intelligence"
+
+MEASURE '_Measures'[OEE MoM Change] =
+    VAR _Current = [OEE]
+    VAR _Previous = [OEE PM]
+    RETURN
+        IF(
+            NOT(ISBLANK(_Previous)),
+            _Current - _Previous,
+            BLANK()
+        )
+    FORMAT_STRING = "+0.0%;-0.0%;0.0%"
+    DISPLAY_FOLDER = "04. Time Intelligence"
+
+MEASURE '_Measures'[OEE MoM %] =
+    DIVIDE(
+        [OEE MoM Change],
+        [OEE PM],
+        BLANK()
+    )
+    FORMAT_STRING = "+0.0%;-0.0%;0.0%"
+    DISPLAY_FOLDER = "04. Time Intelligence"
+
+MEASURE '_Measures'[Good Units YTD] =
+    CALCULATE(
+        [Good Units],
+        DATESYTD(dim_date[date])
+    )
+    FORMAT_STRING = "#,0"
+    DISPLAY_FOLDER = "04. Time Intelligence"
+
+MEASURE '_Measures'[Running Total Units] =
+    CALCULATE(
+        [Good Units],
+        FILTER(
+            ALL(dim_date),
+            dim_date[date] <= MAX(dim_date[date])
+        )
+    )
+    FORMAT_STRING = "#,0"
+    DISPLAY_FOLDER = "04. Time Intelligence"
+
+// --- FOLDER: 05. Energy & Machine Reliability ---
+
+MEASURE '_Measures'[Total Energy kWh] =
+    SUM(fact_production[energy_kwh])
+    FORMAT_STRING = "#,0.0"
+    DISPLAY_FOLDER = "05. Reliability & Energy"
+
+MEASURE '_Measures'[Energy per Unit] =
+    DIVIDE(
+        [Total Energy kWh],
+        [Good Units],
+        0
+    )
+    FORMAT_STRING = "0.000"
+    DISPLAY_FOLDER = "05. Reliability & Energy"
+
+MEASURE '_Measures'[Energy Efficiency] =
+    DIVIDE(
+        [Good Units],
+        [Total Energy kWh],
+        0
+    )
+    FORMAT_STRING = "0.00"
+    DISPLAY_FOLDER = "05. Reliability & Energy"
+
+MEASURE '_Measures'[Failure Count] =
+    CALCULATE(
+        COUNTROWS(fact_production),
+        fact_production[downtime_reason] = "Equipment Failure"
+    )
+    FORMAT_STRING = "#,0"
+    DISPLAY_FOLDER = "05. Reliability & Energy"
+
+MEASURE '_Measures'[MTBF Hours] =
+    DIVIDE(
+        SUM(fact_production[actual_run_time_min]) / 60,
+        [Failure Count],
+        SUM(fact_production[actual_run_time_min]) / 60
+    )
+    FORMAT_STRING = "#,0.0"
+    DISPLAY_FOLDER = "05. Reliability & Energy"
+
+// --- FOLDER: 06. KPI Conditional Formatting ---
+
+MEASURE '_Measures'[OEE Status] =
+    SWITCH(
+        TRUE(),
+        [OEE] >= 0.85, "World Class",
+        [OEE] >= 0.75, "Good",
+        [OEE] >= 0.65, "Needs Improvement",
+        "Critical"
+    )
+    DISPLAY_FOLDER = "06. KPI Formatting"
+
+MEASURE '_Measures'[OEE Color] =
+    SWITCH(
+        TRUE(),
+        [OEE] >= 0.85, "#00B140",
+        [OEE] >= 0.75, "#FFC72C",
+        [OEE] >= 0.65, "#F97316",
+        "#E4002B"
+    )
+    DISPLAY_FOLDER = "06. KPI Formatting"
+
+MEASURE '_Measures'[OEE Trend Arrow] =
+    IF(
+        [OEE MoM Change] > 0,
+        "▲ " & FORMAT(ABS([OEE MoM Change]) * 100, "0.0") & "%",
+        "▼ " & FORMAT(ABS([OEE MoM Change]) * 100, "0.0") & "%"
+    )
+    DISPLAY_FOLDER = "06. KPI Formatting"

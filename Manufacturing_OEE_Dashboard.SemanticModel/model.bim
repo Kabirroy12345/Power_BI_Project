@@ -1,0 +1,712 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1550,
+  "model": {
+    "culture": "en-US",
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "tables": [
+      {
+        "name": "fact_production",
+        "columns": [
+          {
+            "name": "record_id",
+            "dataType": "int64",
+            "sourceColumn": "record_id"
+          },
+          {
+            "name": "date_key",
+            "dataType": "int64",
+            "sourceColumn": "date_key"
+          },
+          {
+            "name": "timestamp",
+            "dataType": "dateTime",
+            "sourceColumn": "timestamp"
+          },
+          {
+            "name": "date",
+            "dataType": "dateTime",
+            "sourceColumn": "date"
+          },
+          {
+            "name": "hour",
+            "dataType": "int64",
+            "sourceColumn": "hour"
+          },
+          {
+            "name": "machine_id",
+            "dataType": "string",
+            "sourceColumn": "machine_id"
+          },
+          {
+            "name": "product_id",
+            "dataType": "string",
+            "sourceColumn": "product_id"
+          },
+          {
+            "name": "operator_id",
+            "dataType": "string",
+            "sourceColumn": "operator_id"
+          },
+          {
+            "name": "shift_id",
+            "dataType": "string",
+            "sourceColumn": "shift_id"
+          },
+          {
+            "name": "production_line",
+            "dataType": "string",
+            "sourceColumn": "production_line"
+          },
+          {
+            "name": "planned_production_time_min",
+            "dataType": "double",
+            "sourceColumn": "planned_production_time_min"
+          },
+          {
+            "name": "actual_run_time_min",
+            "dataType": "double",
+            "sourceColumn": "actual_run_time_min"
+          },
+          {
+            "name": "downtime_min",
+            "dataType": "double",
+            "sourceColumn": "downtime_min"
+          },
+          {
+            "name": "downtime_reason",
+            "dataType": "string",
+            "sourceColumn": "downtime_reason"
+          },
+          {
+            "name": "ideal_cycle_time_sec",
+            "dataType": "double",
+            "sourceColumn": "ideal_cycle_time_sec"
+          },
+          {
+            "name": "actual_cycle_time_sec",
+            "dataType": "double",
+            "sourceColumn": "actual_cycle_time_sec"
+          },
+          {
+            "name": "total_units_produced",
+            "dataType": "int64",
+            "sourceColumn": "total_units_produced"
+          },
+          {
+            "name": "good_units",
+            "dataType": "int64",
+            "sourceColumn": "good_units"
+          },
+          {
+            "name": "defect_units",
+            "dataType": "int64",
+            "sourceColumn": "defect_units"
+          },
+          {
+            "name": "availability",
+            "dataType": "double",
+            "sourceColumn": "availability"
+          },
+          {
+            "name": "performance",
+            "dataType": "double",
+            "sourceColumn": "performance"
+          },
+          {
+            "name": "quality",
+            "dataType": "double",
+            "sourceColumn": "quality"
+          },
+          {
+            "name": "oee",
+            "dataType": "double",
+            "sourceColumn": "oee"
+          },
+          {
+            "name": "scrap_rate",
+            "dataType": "double",
+            "sourceColumn": "scrap_rate"
+          },
+          {
+            "name": "temperature_c",
+            "dataType": "double",
+            "sourceColumn": "temperature_c"
+          },
+          {
+            "name": "vibration_mm_s",
+            "dataType": "double",
+            "sourceColumn": "vibration_mm_s"
+          },
+          {
+            "name": "energy_kwh",
+            "dataType": "double",
+            "sourceColumn": "energy_kwh"
+          },
+          {
+            "name": "energy_per_unit_kwh",
+            "dataType": "double",
+            "sourceColumn": "energy_per_unit_kwh"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "fact_production",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\fact_production.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    PromotedHeaders"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_date",
+        "dataCategory": "Time",
+        "columns": [
+          {
+            "name": "date_key",
+            "dataType": "int64",
+            "isKey": true,
+            "sourceColumn": "date_key"
+          },
+          {
+            "name": "date",
+            "dataType": "dateTime",
+            "sourceColumn": "date"
+          },
+          {
+            "name": "year",
+            "dataType": "int64",
+            "sourceColumn": "year"
+          },
+          {
+            "name": "quarter",
+            "dataType": "int64",
+            "sourceColumn": "quarter"
+          },
+          {
+            "name": "quarter_name",
+            "dataType": "string",
+            "sourceColumn": "quarter_name"
+          },
+          {
+            "name": "month",
+            "dataType": "int64",
+            "sourceColumn": "month"
+          },
+          {
+            "name": "month_name",
+            "dataType": "string",
+            "sourceColumn": "month_name",
+            "sortByColumn": "month"
+          },
+          {
+            "name": "month_short",
+            "dataType": "string",
+            "sourceColumn": "month_short",
+            "sortByColumn": "month"
+          },
+          {
+            "name": "week_of_year",
+            "dataType": "int64",
+            "sourceColumn": "week_of_year"
+          },
+          {
+            "name": "day_of_month",
+            "dataType": "int64",
+            "sourceColumn": "day_of_month"
+          },
+          {
+            "name": "day_of_week",
+            "dataType": "int64",
+            "sourceColumn": "day_of_week"
+          },
+          {
+            "name": "day_name",
+            "dataType": "string",
+            "sourceColumn": "day_name",
+            "sortByColumn": "day_of_week"
+          },
+          {
+            "name": "is_weekend",
+            "dataType": "int64",
+            "sourceColumn": "is_weekend"
+          },
+          {
+            "name": "is_weekday",
+            "dataType": "int64",
+            "sourceColumn": "is_weekday"
+          },
+          {
+            "name": "fiscal_year",
+            "dataType": "int64",
+            "sourceColumn": "fiscal_year"
+          },
+          {
+            "name": "fiscal_quarter",
+            "dataType": "int64",
+            "sourceColumn": "fiscal_quarter"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_date",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\dim_date.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    PromotedHeaders"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_machine",
+        "columns": [
+          {
+            "name": "machine_key",
+            "dataType": "string",
+            "isKey": true,
+            "sourceColumn": "machine_key"
+          },
+          {
+            "name": "machine_id",
+            "dataType": "string",
+            "sourceColumn": "machine_id"
+          },
+          {
+            "name": "machine_type",
+            "dataType": "string",
+            "sourceColumn": "machine_type"
+          },
+          {
+            "name": "production_line",
+            "dataType": "string",
+            "sourceColumn": "production_line"
+          },
+          {
+            "name": "manufacturer",
+            "dataType": "string",
+            "sourceColumn": "manufacturer"
+          },
+          {
+            "name": "install_year",
+            "dataType": "int64",
+            "sourceColumn": "install_year"
+          },
+          {
+            "name": "maintenance_interval_hrs",
+            "dataType": "int64",
+            "sourceColumn": "maintenance_interval_hrs"
+          },
+          {
+            "name": "status",
+            "dataType": "string",
+            "sourceColumn": "status"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_machine",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\dim_machine.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    PromotedHeaders"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_product",
+        "columns": [
+          {
+            "name": "product_key",
+            "dataType": "string",
+            "isKey": true,
+            "sourceColumn": "product_key"
+          },
+          {
+            "name": "product_id",
+            "dataType": "string",
+            "sourceColumn": "product_id"
+          },
+          {
+            "name": "product_name",
+            "dataType": "string",
+            "sourceColumn": "product_name"
+          },
+          {
+            "name": "product_category",
+            "dataType": "string",
+            "sourceColumn": "product_category"
+          },
+          {
+            "name": "target_cycle_time_sec",
+            "dataType": "double",
+            "sourceColumn": "target_cycle_time_sec"
+          },
+          {
+            "name": "unit_cost_usd",
+            "dataType": "double",
+            "sourceColumn": "unit_cost_usd"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_product",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\dim_product.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    PromotedHeaders"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_shift",
+        "columns": [
+          {
+            "name": "shift_key",
+            "dataType": "string",
+            "isKey": true,
+            "sourceColumn": "shift_key"
+          },
+          {
+            "name": "shift_id",
+            "dataType": "string",
+            "sourceColumn": "shift_id"
+          },
+          {
+            "name": "shift_name",
+            "dataType": "string",
+            "sourceColumn": "shift_name"
+          },
+          {
+            "name": "start_hour",
+            "dataType": "int64",
+            "sourceColumn": "start_hour"
+          },
+          {
+            "name": "end_hour",
+            "dataType": "int64",
+            "sourceColumn": "end_hour"
+          },
+          {
+            "name": "hours_range",
+            "dataType": "string",
+            "sourceColumn": "hours_range"
+          },
+          {
+            "name": "is_day_shift",
+            "dataType": "int64",
+            "sourceColumn": "is_day_shift"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_shift",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\dim_shift.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    PromotedHeaders"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_operator",
+        "columns": [
+          {
+            "name": "operator_key",
+            "dataType": "string",
+            "isKey": true,
+            "sourceColumn": "operator_key"
+          },
+          {
+            "name": "operator_id",
+            "dataType": "string",
+            "sourceColumn": "operator_id"
+          },
+          {
+            "name": "operator_name",
+            "dataType": "string",
+            "sourceColumn": "operator_name"
+          },
+          {
+            "name": "experience_level",
+            "dataType": "string",
+            "sourceColumn": "experience_level"
+          },
+          {
+            "name": "is_certified",
+            "dataType": "int64",
+            "sourceColumn": "is_certified"
+          },
+          {
+            "name": "hire_year",
+            "dataType": "int64",
+            "sourceColumn": "hire_year"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_operator",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"c:\\\\Users\\\\HP\\\\Downloads\\\\Power_BI\\\\data\\\\processed\\\\dim_operator.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    PromotedHeaders"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "_Measures",
+        "columns": [
+          {
+            "name": "MeasurePlaceholder",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "MeasurePlaceholder"
+          }
+        ],
+        "measures": [
+          {
+            "name": "Availability",
+            "expression": "DIVIDE(SUM(fact_production[actual_run_time_min]), SUM(fact_production[planned_production_time_min]), 0)",
+            "formatString": "0.0%",
+            "displayFolder": "01. Core OEE"
+          },
+          {
+            "name": "Performance Rate",
+            "expression": "DIVIDE(SUMX(fact_production, fact_production[ideal_cycle_time_sec] * fact_production[total_units_produced]), SUM(fact_production[actual_run_time_min]) * 60, 0)",
+            "formatString": "0.0%",
+            "displayFolder": "01. Core OEE"
+          },
+          {
+            "name": "Quality Rate",
+            "expression": "DIVIDE(SUM(fact_production[good_units]), SUM(fact_production[total_units_produced]), 0)",
+            "formatString": "0.0%",
+            "displayFolder": "01. Core OEE"
+          },
+          {
+            "name": "OEE",
+            "expression": "VAR _Availability = [Availability] VAR _Performance = [Performance Rate] VAR _Quality = [Quality Rate] RETURN _Availability * _Performance * _Quality",
+            "formatString": "0.0%",
+            "displayFolder": "01. Core OEE"
+          },
+          {
+            "name": "Total Units",
+            "expression": "SUM(fact_production[total_units_produced])",
+            "formatString": "#,0",
+            "displayFolder": "02. Production"
+          },
+          {
+            "name": "Good Units",
+            "expression": "SUM(fact_production[good_units])",
+            "formatString": "#,0",
+            "displayFolder": "02. Production"
+          },
+          {
+            "name": "Defect Units",
+            "expression": "SUM(fact_production[defect_units])",
+            "formatString": "#,0",
+            "displayFolder": "02. Production"
+          },
+          {
+            "name": "Scrap Rate",
+            "expression": "DIVIDE([Defect Units], [Total Units], 0)",
+            "formatString": "0.00%",
+            "displayFolder": "02. Production"
+          },
+          {
+            "name": "Production Value",
+            "expression": "SUMX(fact_production, fact_production[good_units] * RELATED(dim_product[unit_cost_usd]))",
+            "formatString": "$#,0",
+            "displayFolder": "02. Production"
+          },
+          {
+            "name": "Downtime Hours",
+            "expression": "DIVIDE(SUM(fact_production[downtime_min]), 60, 0)",
+            "formatString": "#,0.0",
+            "displayFolder": "03. Downtime"
+          },
+          {
+            "name": "Downtime %",
+            "expression": "DIVIDE(SUM(fact_production[downtime_min]), SUM(fact_production[planned_production_time_min]), 0)",
+            "formatString": "0.00%",
+            "displayFolder": "03. Downtime"
+          },
+          {
+            "name": "Unplanned Downtime",
+            "expression": "DIVIDE(CALCULATE(SUM(fact_production[downtime_min]), NOT(fact_production[downtime_reason] IN {\"Planned Maintenance\", \"No Downtime\"})), 60, 0)",
+            "formatString": "#,0.0",
+            "displayFolder": "03. Downtime"
+          },
+          {
+            "name": "OEE PM",
+            "expression": "CALCULATE([OEE], DATEADD(dim_date[date], -1, MONTH))",
+            "formatString": "0.0%",
+            "displayFolder": "04. Time Intelligence"
+          },
+          {
+            "name": "OEE MoM Change",
+            "expression": "VAR _Current = [OEE] VAR _Previous = [OEE PM] RETURN IF(NOT(ISBLANK(_Previous)), _Current - _Previous, BLANK())",
+            "formatString": "+0.0%;-0.0%;0.0%",
+            "displayFolder": "04. Time Intelligence"
+          },
+          {
+            "name": "OEE MoM %",
+            "expression": "DIVIDE([OEE MoM Change], [OEE PM], BLANK())",
+            "formatString": "+0.0%;-0.0%;0.0%",
+            "displayFolder": "04. Time Intelligence"
+          },
+          {
+            "name": "Good Units YTD",
+            "expression": "CALCULATE([Good Units], DATESYTD(dim_date[date]))",
+            "formatString": "#,0",
+            "displayFolder": "04. Time Intelligence"
+          },
+          {
+            "name": "Running Total Units",
+            "expression": "CALCULATE([Good Units], FILTER(ALL(dim_date), dim_date[date] <= MAX(dim_date[date])))",
+            "formatString": "#,0",
+            "displayFolder": "04. Time Intelligence"
+          },
+          {
+            "name": "Total Energy kWh",
+            "expression": "SUM(fact_production[energy_kwh])",
+            "formatString": "#,0.0",
+            "displayFolder": "05. Reliability & Energy"
+          },
+          {
+            "name": "Energy per Unit",
+            "expression": "DIVIDE([Total Energy kWh], [Good Units], 0)",
+            "formatString": "0.000",
+            "displayFolder": "05. Reliability & Energy"
+          },
+          {
+            "name": "Energy Efficiency",
+            "expression": "DIVIDE([Good Units], [Total Energy kWh], 0)",
+            "formatString": "0.00",
+            "displayFolder": "05. Reliability & Energy"
+          },
+          {
+            "name": "Failure Count",
+            "expression": "CALCULATE(COUNTROWS(fact_production), fact_production[downtime_reason] = \"Equipment Failure\")",
+            "formatString": "#,0",
+            "displayFolder": "05. Reliability & Energy"
+          },
+          {
+            "name": "MTBF Hours",
+            "expression": "DIVIDE(SUM(fact_production[actual_run_time_min]) / 60, [Failure Count], SUM(fact_production[actual_run_time_min]) / 60)",
+            "formatString": "#,0.0",
+            "displayFolder": "05. Reliability & Energy"
+          },
+          {
+            "name": "OEE Status",
+            "expression": "SWITCH(TRUE(), [OEE] >= 0.85, \"World Class\", [OEE] >= 0.75, \"Good\", [OEE] >= 0.65, \"Needs Improvement\", \"Critical\")",
+            "displayFolder": "06. KPI Formatting"
+          },
+          {
+            "name": "OEE Color",
+            "expression": "SWITCH(TRUE(), [OEE] >= 0.85, \"#00B140\", [OEE] >= 0.75, \"#FFC72C\", [OEE] >= 0.65, \"#F97316\", \"#E4002B\")",
+            "displayFolder": "06. KPI Formatting"
+          },
+          {
+            "name": "OEE Trend Arrow",
+            "expression": "IF([OEE MoM Change] > 0, \"\u25b2 \" & FORMAT(ABS([OEE MoM Change]) * 100, \"0.0\") & \"%\", \"\u25bc \" & FORMAT(ABS([OEE MoM Change]) * 100, \"0.0\") & \"%\")",
+            "displayFolder": "06. KPI Formatting"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "_Measures",
+            "mode": "import",
+            "source": {
+              "type": "calculated",
+              "expression": "ROW(\"MeasurePlaceholder\", 1)"
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "rel_fact_date",
+        "fromTable": "fact_production",
+        "fromColumn": "date_key",
+        "toTable": "dim_date",
+        "toColumn": "date_key",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "rel_fact_machine",
+        "fromTable": "fact_production",
+        "fromColumn": "machine_id",
+        "toTable": "dim_machine",
+        "toColumn": "machine_key",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "rel_fact_product",
+        "fromTable": "fact_production",
+        "fromColumn": "product_id",
+        "toTable": "dim_product",
+        "toColumn": "product_key",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "rel_fact_shift",
+        "fromTable": "fact_production",
+        "fromColumn": "shift_id",
+        "toTable": "dim_shift",
+        "toColumn": "shift_key",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "rel_fact_operator",
+        "fromTable": "fact_production",
+        "fromColumn": "operator_id",
+        "toTable": "dim_operator",
+        "toColumn": "operator_key",
+        "crossFilteringBehavior": "oneDirection"
+      }
+    ]
+  }
+}
