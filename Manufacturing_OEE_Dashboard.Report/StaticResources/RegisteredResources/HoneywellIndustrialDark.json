@@ -16,23 +16,7 @@
     "#60A5FA",
     "#34D399",
     "#FBBF24",
-    "#F87171",
-    "#C084FC",
-    "#F472B6",
-    "#22D3EE",
-    "#818CF8",
-    "#2DD4BF",
-    "#A3E635",
-    "#FB923C",
-    "#2563EB",
-    "#0284C7",
-    "#059669",
-    "#D97706",
-    "#DC2626",
-    "#7C3AED",
-    "#DB2777",
-    "#0891B2",
-    "#4F46E5"
+    "#F87171"
   ],
   "tableAccent": "#38BDF8",
   "good": "#10B981",
@@ -57,12 +41,12 @@
   "center": "#0F172A",
   "textClasses": {
     "callout": {
-      "fontSize": 22,
+      "fontSize": 26,
       "fontFace": "Segoe UI Semibold",
       "color": "#38BDF8"
     },
     "title": {
-      "fontSize": 11,
+      "fontSize": 12,
       "fontFace": "Segoe UI Semibold",
       "color": "#F8FAFC"
     },
@@ -72,7 +56,7 @@
       "color": "#F8FAFC"
     },
     "label": {
-      "fontSize": 10,
+      "fontSize": 10.5,
       "fontFace": "Segoe UI",
       "color": "#E2E8F0"
     }
@@ -133,7 +117,7 @@
             },
             "labelColor": {
               "solid": {
-                "color": "#CBD5E1"
+                "color": "#E2E8F0"
               }
             },
             "titleColor": {
@@ -166,7 +150,7 @@
         "legend": [
           {
             "show": true,
-            "position": "Bottom",
+            "position": "Top",
             "showTitle": false,
             "labelColor": {
               "solid": {
@@ -604,20 +588,6 @@
             "color": {
               "solid": {
                 "color": "#F5F5F5"
-              }
-            }
-          }
-        ],
-        "header": [
-          {
-            "fontColor": {
-              "solid": {
-                "color": "#38BDF8"
-              }
-            },
-            "background": {
-              "solid": {
-                "color": "#131B2E"
               }
             }
           }
@@ -1225,7 +1195,7 @@
       "*": {
         "grid": [
           {
-            "rowPadding": 5,
+            "rowPadding": 6,
             "gridHorizontal": true,
             "gridHorizontalColor": {
               "solid": {
@@ -1252,7 +1222,7 @@
                 "color": "#0F172A"
               }
             },
-            "fontSize": 10
+            "fontSize": 11
           }
         ],
         "values": [
@@ -1277,7 +1247,7 @@
                 "color": "#182238"
               }
             },
-            "fontSize": 9.5
+            "fontSize": 10.5
           }
         ],
         "total": [
@@ -1292,7 +1262,7 @@
                 "color": "#0F172A"
               }
             },
-            "fontSize": 10
+            "fontSize": 11
           }
         ]
       }

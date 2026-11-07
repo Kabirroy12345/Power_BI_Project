@@ -41,7 +41,8 @@
                 "value": "Automatic"
               }
             ],
-            "formatString": "0"
+            "formatString": "0",
+            "isHidden": true
           },
           {
             "name": "timestamp",
@@ -74,7 +75,7 @@
             "dataType": "int64",
             "sourceColumn": "hour",
             "lineageTag": "eebdde85-09b1-5cdd-a5f0-bc2b8b073c1b",
-            "summarizeBy": "sum",
+            "summarizeBy": "none",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -94,7 +95,8 @@
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
               }
-            ]
+            ],
+            "isHidden": true
           },
           {
             "name": "product_id",
@@ -107,7 +109,8 @@
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
               }
-            ]
+            ],
+            "isHidden": true
           },
           {
             "name": "operator_id",
@@ -120,7 +123,8 @@
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
               }
-            ]
+            ],
+            "isHidden": true
           },
           {
             "name": "shift_id",
@@ -133,7 +137,8 @@
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
               }
-            ]
+            ],
+            "isHidden": true
           },
           {
             "name": "production_line",
@@ -427,7 +432,8 @@
               }
             ],
             "formatString": "0",
-            "isKey": true
+            "isKey": true,
+            "isHidden": true
           },
           {
             "name": "date",
@@ -678,7 +684,8 @@
                 "value": "Automatic"
               }
             ],
-            "isKey": true
+            "isKey": true,
+            "isHidden": true
           },
           {
             "name": "machine_id",
@@ -814,7 +821,8 @@
                 "value": "Automatic"
               }
             ],
-            "isKey": true
+            "isKey": true,
+            "isHidden": true
           },
           {
             "name": "product_id",
@@ -922,7 +930,8 @@
                 "value": "Automatic"
               }
             ],
-            "isKey": true
+            "isKey": true,
+            "isHidden": true
           },
           {
             "name": "shift_id",
@@ -1046,7 +1055,8 @@
                 "value": "Automatic"
               }
             ],
-            "isKey": true
+            "isKey": true,
+            "isHidden": true
           },
           {
             "name": "operator_id",
@@ -1164,181 +1174,114 @@
           {
             "name": "Availability",
             "expression": "DIVIDE(SUM(fact_production[actual_run_time_min]), SUM(fact_production[planned_production_time_min]))",
-            "displayFolder": "01. Core OEE",
+            "displayFolder": "1. Core OEE",
             "lineageTag": "9e6a4b16-1601-508a-b9f9-8a448561b90a",
             "formatString": "0.0%"
           },
           {
             "name": "Performance Rate",
             "expression": "DIVIDE(SUMX(fact_production, fact_production[ideal_cycle_time_sec] * fact_production[total_units_produced]), SUM(fact_production[actual_run_time_min]) * 60)",
-            "displayFolder": "01. Core OEE",
+            "displayFolder": "1. Core OEE",
             "lineageTag": "54265275-c116-59ad-95dc-b7563a4ee624",
             "formatString": "0.0%"
           },
           {
             "name": "Quality Rate",
             "expression": "DIVIDE(SUM(fact_production[good_units]), SUM(fact_production[total_units_produced]))",
-            "displayFolder": "01. Core OEE",
+            "displayFolder": "1. Core OEE",
             "lineageTag": "433ebaa7-5068-5f30-b7af-5115bfd4b5d2",
             "formatString": "0.0%"
           },
           {
             "name": "OEE",
-            "expression": "VAR _Availability = [Availability] VAR _Performance = [Performance Rate] VAR _Quality = [Quality Rate] RETURN IF(ISBLANK(_Availability), BLANK(), _Availability * _Performance * _Quality)",
-            "displayFolder": "01. Core OEE",
+            "expression": "VAR _Avail = [Availability] VAR _Perf = [Performance Rate] VAR _Qual = [Quality Rate] RETURN IF(ISBLANK(_Avail), BLANK(), _Avail * _Perf * _Qual)",
+            "displayFolder": "1. Core OEE",
             "lineageTag": "ffe134a8-a452-5a06-bc8a-5fe22816ce42",
             "formatString": "0.0%"
           },
           {
             "name": "Total Units",
             "expression": "SUM(fact_production[total_units_produced])",
-            "displayFolder": "02. Production",
+            "displayFolder": "2. Production & Quality",
             "lineageTag": "f8306b9e-589e-5a95-a826-67acd4eb2c9c",
             "formatString": "#,0"
           },
           {
             "name": "Good Units",
             "expression": "SUM(fact_production[good_units])",
-            "displayFolder": "02. Production",
+            "displayFolder": "2. Production & Quality",
             "lineageTag": "36add661-ace3-595d-a336-ec478041283c",
             "formatString": "#,0"
           },
           {
             "name": "Defect Units",
             "expression": "SUM(fact_production[defect_units])",
-            "displayFolder": "02. Production",
+            "displayFolder": "2. Production & Quality",
             "lineageTag": "be33172a-662b-5a7f-a818-beea8cafaaa4",
             "formatString": "#,0"
           },
           {
             "name": "Scrap Rate",
             "expression": "DIVIDE([Defect Units], [Total Units])",
-            "displayFolder": "02. Production",
+            "displayFolder": "2. Production & Quality",
             "lineageTag": "20f49337-aecb-5d13-9bc3-5a75c178dbf9",
             "formatString": "0.00%"
           },
           {
             "name": "Production Value",
             "expression": "SUMX(fact_production, fact_production[good_units] * RELATED(dim_product[unit_cost_usd]))",
-            "displayFolder": "02. Production",
+            "displayFolder": "2. Production & Quality",
             "lineageTag": "04ea7cfd-c2d7-5d38-aabe-48b8b527306b",
-            "formatString": "$#,0"
-          },
-          {
-            "name": "Cost of Poor Quality",
-            "expression": "SUMX(fact_production, fact_production[defect_units] * RELATED(dim_product[unit_cost_usd]))",
-            "displayFolder": "02. Production",
-            "lineageTag": "6ce1d704-23bb-5d53-9a21-02b38cc98e76",
             "formatString": "$#,0"
           },
           {
             "name": "Downtime Hours",
             "expression": "VAR _dt = SUM(fact_production[downtime_min]) RETURN IF(_dt > 0, DIVIDE(_dt, 60))",
-            "displayFolder": "03. Downtime",
+            "displayFolder": "3. Downtime & Reliability",
             "lineageTag": "df01a0fa-2bf3-5607-b9c5-e3f97707ef34",
             "formatString": "#,0.0"
           },
           {
-            "name": "Downtime %",
-            "expression": "DIVIDE(SUM(fact_production[downtime_min]), SUM(fact_production[planned_production_time_min]))",
-            "displayFolder": "03. Downtime",
-            "lineageTag": "0d7b20b4-fa78-5802-a958-19062fcbff6c",
-            "formatString": "0.00%"
-          },
-          {
             "name": "Unplanned Downtime",
             "expression": "VAR _dt = CALCULATE(SUM(fact_production[downtime_min]), KEEPFILTERS(NOT(fact_production[downtime_reason] IN {\"Planned Maintenance\", \"No Downtime\"}))) RETURN IF(_dt > 0, DIVIDE(_dt, 60))",
-            "displayFolder": "03. Downtime",
+            "displayFolder": "3. Downtime & Reliability",
             "lineageTag": "54d3181c-8a02-5596-9660-9a13e757e7e7",
             "formatString": "#,0.0"
           },
           {
-            "name": "OEE PM",
-            "expression": "CALCULATE([OEE], DATEADD(dim_date[date], -1, MONTH))",
-            "displayFolder": "04. Time Intelligence",
-            "lineageTag": "00710d7f-cbef-5395-9cb4-cfd577213c89",
-            "formatString": "0.0%"
-          },
-          {
-            "name": "OEE MoM Change",
-            "expression": "VAR _Current = [OEE] VAR _Previous = [OEE PM] RETURN IF(NOT(ISBLANK(_Previous)) && NOT(ISBLANK(_Current)), _Current - _Previous, BLANK())",
-            "displayFolder": "04. Time Intelligence",
-            "lineageTag": "193736c1-0c74-5c90-b385-2d3380c99f2a",
-            "formatString": "+0.0%;-0.0%;0.0%"
-          },
-          {
-            "name": "OEE MoM %",
-            "expression": "DIVIDE([OEE MoM Change], [OEE PM], BLANK())",
-            "displayFolder": "04. Time Intelligence",
-            "lineageTag": "188f74ce-41e1-5e53-bb5f-0facdd6e6e8c",
-            "formatString": "+0.0%;-0.0%;0.0%"
-          },
-          {
-            "name": "Good Units YTD",
-            "expression": "CALCULATE([Good Units], DATESYTD(dim_date[date]))",
-            "displayFolder": "04. Time Intelligence",
-            "lineageTag": "2fbe35d2-1521-5cf8-a4c7-a3d74ea22b1b",
-            "formatString": "#,0"
-          },
-          {
-            "name": "Running Total Units",
-            "expression": "CALCULATE([Good Units], FILTER(ALL(dim_date), dim_date[date] <= MAX(dim_date[date])))",
-            "displayFolder": "04. Time Intelligence",
-            "lineageTag": "8033b669-a295-5d50-89b0-a5caa492a83b",
-            "formatString": "#,0"
-          },
-          {
-            "name": "Total Energy kWh",
-            "expression": "SUM(fact_production[energy_kwh])",
-            "displayFolder": "05. Reliability & Energy",
-            "lineageTag": "e21cb707-7146-550d-ab63-da3a58d2c4db",
-            "formatString": "#,0.0"
-          },
-          {
-            "name": "Energy per Unit",
-            "expression": "DIVIDE([Total Energy kWh], [Good Units])",
-            "displayFolder": "05. Reliability & Energy",
-            "lineageTag": "73023221-54b5-5c7f-85a7-81b2b3e89a53",
-            "formatString": "0.000"
-          },
-          {
-            "name": "Energy Efficiency",
-            "expression": "DIVIDE([Good Units], [Total Energy kWh])",
-            "displayFolder": "05. Reliability & Energy",
-            "lineageTag": "7eb90409-ad68-502c-a0eb-487fe188872d",
-            "formatString": "0.00"
-          },
-          {
             "name": "Failure Count",
             "expression": "CALCULATE(COUNTROWS(fact_production), KEEPFILTERS(fact_production[downtime_reason] = \"Equipment Failure\"))",
-            "displayFolder": "05. Reliability & Energy",
+            "displayFolder": "3. Downtime & Reliability",
             "lineageTag": "836159e7-96f2-574d-9116-6c9f3e07cd3b",
             "formatString": "#,0"
           },
           {
             "name": "MTBF Hours",
             "expression": "VAR _RunHrs = SUM(fact_production[actual_run_time_min]) / 60 VAR _Fails = [Failure Count] RETURN IF(ISBLANK(_RunHrs), BLANK(), IF(_Fails = 0, _RunHrs, DIVIDE(_RunHrs, _Fails, 0)))",
-            "displayFolder": "05. Reliability & Energy",
+            "displayFolder": "3. Downtime & Reliability",
             "lineageTag": "5fd572bd-4e58-555d-b234-d8500be398c8",
             "formatString": "#,0.0"
           },
           {
-            "name": "OEE Status",
-            "expression": "IF(ISBLANK([OEE]), BLANK(), SWITCH(TRUE(), [OEE] >= 0.85, \"World Class\", [OEE] >= 0.75, \"Good\", [OEE] >= 0.65, \"Needs Improvement\", \"Critical\"))",
-            "displayFolder": "06. KPI Formatting",
-            "lineageTag": "87fe9f9d-3e36-5b3f-a52c-0f11b1bce902"
+            "name": "OEE Previous Month",
+            "expression": "CALCULATE([OEE], DATEADD(dim_date[date], -1, MONTH))",
+            "displayFolder": "4. Time Intelligence",
+            "lineageTag": "86867140-54ee-507c-bb5f-b6637c275be4",
+            "formatString": "0.0%"
           },
           {
-            "name": "OEE Color",
-            "expression": "IF(ISBLANK([OEE]), BLANK(), SWITCH(TRUE(), [OEE] >= 0.85, \"#10B981\", [OEE] >= 0.75, \"#F59E0B\", [OEE] >= 0.65, \"#F97316\", \"#EF4444\"))",
-            "displayFolder": "06. KPI Formatting",
-            "lineageTag": "880065f0-cdc8-53a7-9c9f-18f8388cbe62"
+            "name": "OEE MoM Change",
+            "expression": "VAR _Curr = [OEE] VAR _Prev = [OEE Previous Month] RETURN IF(NOT(ISBLANK(_Prev)) && NOT(ISBLANK(_Curr)), _Curr - _Prev, BLANK())",
+            "displayFolder": "4. Time Intelligence",
+            "lineageTag": "193736c1-0c74-5c90-b385-2d3380c99f2a",
+            "formatString": "+0.0%;-0.0%;0.0%"
           },
           {
-            "name": "OEE Trend Arrow",
-            "expression": "IF(ISBLANK([OEE MoM Change]), BLANK(), IF([OEE MoM Change] > 0, \"\u25b2 \" & FORMAT(ABS([OEE MoM Change]) * 100, \"0.0\") & \"%\", \"\u25bc \" & FORMAT(ABS([OEE MoM Change]) * 100, \"0.0\") & \"%\"))",
-            "displayFolder": "06. KPI Formatting",
-            "lineageTag": "545848e7-f91f-5bf1-a879-c8e07a282c12"
+            "name": "Good Units YTD",
+            "expression": "CALCULATE([Good Units], DATESYTD(dim_date[date]))",
+            "displayFolder": "4. Time Intelligence",
+            "lineageTag": "2fbe35d2-1521-5cf8-a4c7-a3d74ea22b1b",
+            "formatString": "#,0"
           }
         ],
         "partitions": [
