@@ -38,10 +38,10 @@ Separates scheduled maintenance from **Unplanned Downtime (`4,258.7 Hours`)** ou
 
 ```mermaid
 flowchart LR
-    A["5 Raw CSV Files<br/>(data/ folder • 145,728 rows)"] --> B["Power Query (M)<br/>DataFolder Parameter • Column Pruning<br/>(28 → 12 Fact Cols) • Strict Typing"]
-    B --> C["5-Table Star Schema<br/>1 Fact + 4 Dimension Tables<br/>Single-Direction (1:*)"]
-    C --> D["12 DAX Measures<br/>(_Measures Table • 4 Folders)"]
-    D --> E["3-Page Interactive Report<br/>KPI Cards • Slicers • Cross-Filtering"]
+    A["Raw Factory CSV<br/>(145,728 Hourly Logs)"] --> B["Python Pandas ETL<br/>(scripts/etl_pipeline.py)<br/>Deduplicate • Fix Nulls/Negatives • Split Tables"]
+    B --> C["5 Star Schema CSVs<br/>(data/ folder)<br/>1 Fact + 4 Dimensions"]
+    C --> D["Power Query & Star Schema<br/>Column Pruning (28 → 12)<br/>Single-Direction (1:*)"]
+    D --> E["12 DAX Measures &<br/>3-Page Power BI Report"]
 ```
 
 ### What's Inside the Repository
@@ -49,6 +49,7 @@ flowchart LR
 | File / Folder | Description |
 | :--- | :--- |
 | **`OEE_Dashboard_Simple.pbip`** | **Main Power BI Project file.** Double-click to open directly in Power BI Desktop, then click **Home → Refresh**. |
+| **`scripts/etl_pipeline.py`** | **Python Pandas ETL script** that cleans raw data (removes duplicates, clips negative values, reconciles unit counts, fills nulls) and splits it into the Star Schema CSVs. |
 | **`OEE_Dashboard_Simple.Report/`** | PBIR report definition containing the 3 pages, visual layouts, and custom dark theme (`HoneywellIndustrialDark.json`). |
 | **`OEE_Dashboard_Simple.SemanticModel/`** | TMDL semantic model definition (`tables/`, `relationships.tmdl`, `expressions.tmdl`, `diagramLayout.json`). |
 | **`data/`** | The 5 Star Schema CSV tables (`fact_production.csv`, `dim_date.csv`, `dim_machine.csv`, `dim_product.csv`, `dim_shift.csv`). |
@@ -75,9 +76,17 @@ The semantic model follows a clean **Kimball Star Schema** with **1 central Fact
 
 ---
 
-## 4. Power Query (M) Transformations
+## 4. Data Cleaning & ETL (Python Pandas + Power Query)
 
-Opening **Home → Transform data** in Power BI Desktop shows 4 clean, reproducible steps on each table:
+### Stage 1: Python Pandas ETL (`scripts/etl_pipeline.py`)
+Before loading into Power BI, the raw 145,728-row factory log is cleaned in Python using **Pandas**:
+1. **Remove Duplicates (`df.drop_duplicates`)**: Removes any duplicate `record_id` rows.
+2. **Fix Negative Values (`df.clip(lower=0)`)**: Clips any negative sensor/runtime/unit glitches to `0`.
+3. **Validate Unit Math**: Ensures `good_units = total_units_produced - defect_units` on every row.
+4. **Handle Missing Values (`df.fillna(0)`)**: Fills any missing numeric values with `0` and splits the flat table into the **5 Star Schema CSVs** (`fact_production`, `dim_date`, `dim_machine`, `dim_product`, `dim_shift`).
+
+### Stage 2: Power Query (M) in Power BI Desktop
+Opening **Home → Transform data** in Power BI Desktop shows 4 clean steps on each table:
 1. **`DataFolder` Parameter**: A centralized text parameter pointing to the `data\` folder so all 5 CSV queries update from a single path if the folder moves.
 2. **`Promoted Headers`**: Promotes the first CSV row to column names.
 3. **`Removed Other Columns` (`Table.SelectColumns`)**: Prunes unused raw columns (`fact_production` is slimmed from 28 raw columns down to the 12 columns required for reporting), reducing memory footprint and keeping the field pane clean.
