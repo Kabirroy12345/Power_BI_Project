@@ -1,0 +1,99 @@
+table _Measures
+	lineageTag: 13086b8a-ada5-4b36-af52-9d69482e4c3a
+
+	measure Availability =
+			DIVIDE(
+			    SUM(fact_production[actual_run_time_min]),
+			    SUM(fact_production[planned_production_time_min])
+			)
+		formatString: 0.0%
+		displayFolder: 1. OEE
+		lineageTag: 56e5c97b-0c49-4640-8710-28e903fb601d
+
+	measure 'Performance Rate' =
+			DIVIDE(
+			    SUMX(fact_production, fact_production[ideal_cycle_time_sec] * fact_production[total_units_produced]),
+			    SUM(fact_production[actual_run_time_min]) * 60
+			)
+		formatString: 0.0%
+		displayFolder: 1. OEE
+		lineageTag: 102466ff-71e2-4049-9595-4da9a734f5e8
+
+	measure 'Quality Rate' = DIVIDE([Good Units], [Total Units])
+		formatString: 0.0%
+		displayFolder: 1. OEE
+		lineageTag: f50388aa-e457-4497-9944-e9ca0162f445
+
+	measure OEE = [Availability] * [Performance Rate] * [Quality Rate]
+		formatString: 0.0%
+		displayFolder: 1. OEE
+		lineageTag: 9ab0f491-03fd-4071-88a0-46ae17e92236
+
+	measure 'Total Units' = SUM(fact_production[total_units_produced])
+		formatString: #,0
+		displayFolder: 2. Production
+		lineageTag: 654904d7-eb93-4df3-9a28-dcca597bce9d
+
+	measure 'Good Units' = SUM(fact_production[good_units])
+		formatString: #,0
+		displayFolder: 2. Production
+		lineageTag: 244dc4d8-ed15-44b3-b643-1fd18fe29cbe
+
+	measure 'Defect Units' = SUM(fact_production[defect_units])
+		formatString: #,0
+		displayFolder: 2. Production
+		lineageTag: 90f333e6-5e35-4095-80dd-4aa4c1407860
+
+	measure 'Scrap Rate' = DIVIDE([Defect Units], [Total Units])
+		formatString: 0.00%
+		displayFolder: 2. Production
+		lineageTag: 2625d2ea-f5a6-4182-b312-83378ec2108a
+
+	measure 'Downtime Hours' = DIVIDE(SUM(fact_production[downtime_min]), 60)
+		formatString: #,0.0
+		displayFolder: 3. Downtime
+		lineageTag: 0903575d-e662-48d8-bc8e-c3eb77b75d98
+
+	measure 'Unplanned Downtime' =
+			CALCULATE(
+			    [Downtime Hours],
+			    KEEPFILTERS(NOT(fact_production[downtime_reason] IN {"Planned Maintenance", "No Downtime"}))
+			)
+		formatString: #,0.0
+		displayFolder: 3. Downtime
+		lineageTag: f5f43b38-4a58-4719-aa67-9c2f093bcc1e
+
+	measure 'Downtime %' =
+			DIVIDE(
+			    SUM(fact_production[downtime_min]),
+			    SUM(fact_production[planned_production_time_min])
+			)
+		formatString: 0.00%
+		displayFolder: 3. Downtime
+		lineageTag: f464dda5-77a2-469b-b391-bde5cafdb31e
+
+	measure 'OEE Previous Month' = CALCULATE([OEE], DATEADD(dim_date[date], -1, MONTH))
+		formatString: 0.0%
+		displayFolder: 4. Time Intelligence
+		lineageTag: ed174597-b9cc-41e0-b567-683a30c3136f
+
+	column MeasurePlaceholder
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3b530ca4-61b6-4618-9650-119095047f54
+		summarizeBy: none
+		sourceColumn: MeasurePlaceholder
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = #table(type table [MeasurePlaceholder = Int64.Type], {{1}})
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

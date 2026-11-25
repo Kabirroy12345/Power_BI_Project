@@ -1,0 +1,5 @@
+expression DataFolder = "C:\Users\HP\OneDrive\Documents\Desktop\Data_Analysis_Practice\Power_BI_Project_Simple\data\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 5fd261bf-bf4a-4f39-9590-2f37ca1e017f
+
+	annotation PBI_ResultType = Text
+

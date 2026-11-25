@@ -1,0 +1,126 @@
+table fact_production
+	lineageTag: 11f882d7-bf50-4d0b-ad5b-563511bb6c73
+
+	column date
+		dataType: dateTime
+		isHidden
+		formatString: dd-mmm-yyyy
+		lineageTag: 1a72468f-5c4d-4dc9-b567-f4a3bd22f68b
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column machine_id
+		dataType: string
+		isHidden
+		lineageTag: d50c37e8-ab05-4d57-817a-18ea88bb80e5
+		summarizeBy: none
+		sourceColumn: machine_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: string
+		isHidden
+		lineageTag: f6a44ff3-20d0-47bb-bcf8-37655834799a
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column shift_id
+		dataType: string
+		isHidden
+		lineageTag: 3583cefd-e7b3-416e-af48-d7b7f427ae87
+		summarizeBy: none
+		sourceColumn: shift_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column planned_production_time_min
+		dataType: double
+		formatString: #,0.0
+		lineageTag: 03813693-dc41-4c73-9f37-b205ffa5fab2
+		summarizeBy: sum
+		sourceColumn: planned_production_time_min
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_run_time_min
+		dataType: double
+		formatString: #,0.0
+		lineageTag: e4aff928-2b01-4a78-b61e-1eb406a32890
+		summarizeBy: sum
+		sourceColumn: actual_run_time_min
+
+		annotation SummarizationSetBy = Automatic
+
+	column downtime_min
+		dataType: double
+		formatString: #,0.0
+		lineageTag: 7158d1cb-8d7d-4d3b-ad1b-28a83487ecb0
+		summarizeBy: sum
+		sourceColumn: downtime_min
+
+		annotation SummarizationSetBy = Automatic
+
+	column downtime_reason
+		dataType: string
+		lineageTag: ab97cbc4-6a6a-4078-84dd-030ab8d5240a
+		summarizeBy: none
+		sourceColumn: downtime_reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column ideal_cycle_time_sec
+		dataType: double
+		formatString: #,0.0
+		lineageTag: c542b94e-fb98-4713-9998-0680c7791236
+		summarizeBy: none
+		sourceColumn: ideal_cycle_time_sec
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_units_produced
+		dataType: int64
+		formatString: #,0
+		lineageTag: 4a7a22b0-0b8b-4d2c-9898-b84608c5d77d
+		summarizeBy: sum
+		sourceColumn: total_units_produced
+
+		annotation SummarizationSetBy = Automatic
+
+	column good_units
+		dataType: int64
+		formatString: #,0
+		lineageTag: 73773323-faf1-4bb0-a62d-5ea84afbc550
+		summarizeBy: sum
+		sourceColumn: good_units
+
+		annotation SummarizationSetBy = Automatic
+
+	column defect_units
+		dataType: int64
+		formatString: #,0
+		lineageTag: cc0b5c83-6e9c-4058-a18d-1eff0607a32f
+		summarizeBy: sum
+		sourceColumn: defect_units
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_production = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "fact_production.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Promoted Headers", {"date", "machine_id", "product_id", "shift_id", "planned_production_time_min", "actual_run_time_min", "downtime_min", "downtime_reason", "ideal_cycle_time_sec", "total_units_produced", "good_units", "defect_units"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns", {{"date", type date}, {"machine_id", type text}, {"product_id", type text}, {"shift_id", type text}, {"planned_production_time_min", type number}, {"actual_run_time_min", type number}, {"downtime_min", type number}, {"downtime_reason", type text}, {"ideal_cycle_time_sec", type number}, {"total_units_produced", Int64.Type}, {"good_units", Int64.Type}, {"defect_units", Int64.Type}}, "en-US")
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

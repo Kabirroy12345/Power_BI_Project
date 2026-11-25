@@ -1,0 +1,60 @@
+// =====================================================================
+// SIMPLE OEE DASHBOARD - ALL 12 DAX MEASURES
+// All measures live in the "_Measures" table.
+// Tables: fact_production, dim_date, dim_machine, dim_product, dim_shift
+// =====================================================================
+
+// ---------- 1. OEE ----------------------------------------------------
+
+// Out of the time we PLANNED to run, how much did we ACTUALLY run?
+Availability =
+DIVIDE(
+    SUM(fact_production[actual_run_time_min]),
+    SUM(fact_production[planned_production_time_min])
+)
+
+// While running, how fast were we compared to the ideal speed?
+// SUMX goes row by row: ideal seconds per unit x units made, then adds it all up.
+Performance Rate =
+DIVIDE(
+    SUMX(fact_production, fact_production[ideal_cycle_time_sec] * fact_production[total_units_produced]),
+    SUM(fact_production[actual_run_time_min]) * 60
+)
+
+// Out of everything we made, how much was good?
+Quality Rate = DIVIDE([Good Units], [Total Units])
+
+// The headline KPI. 85% or more counts as world class.
+OEE = [Availability] * [Performance Rate] * [Quality Rate]
+
+// ---------- 2. Production ---------------------------------------------
+
+Total Units  = SUM(fact_production[total_units_produced])
+Good Units   = SUM(fact_production[good_units])
+Defect Units = SUM(fact_production[defect_units])
+Scrap Rate   = DIVIDE([Defect Units], [Total Units])
+
+// ---------- 3. Downtime -----------------------------------------------
+
+// Data is stored in minutes, so divide by 60 to get hours.
+Downtime Hours = DIVIDE(SUM(fact_production[downtime_min]), 60)
+
+// Downtime we did NOT plan (breakdowns, material shortages, ...).
+// KEEPFILTERS = add my filter ON TOP of the chart's filter instead of replacing it.
+Unplanned Downtime =
+CALCULATE(
+    [Downtime Hours],
+    KEEPFILTERS(NOT(fact_production[downtime_reason] IN {"Planned Maintenance", "No Downtime"}))
+)
+
+// The share of planned time that was lost to stops.
+Downtime % =
+DIVIDE(
+    SUM(fact_production[downtime_min]),
+    SUM(fact_production[planned_production_time_min])
+)
+
+// ---------- 4. Time Intelligence --------------------------------------
+
+// The same OEE calculation, shifted back one month (used on the monthly trend line).
+OEE Previous Month = CALCULATE([OEE], DATEADD(dim_date[date], -1, MONTH))

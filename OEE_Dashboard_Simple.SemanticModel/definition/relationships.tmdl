@@ -1,0 +1,16 @@
+relationship 4c9e2ed0-1900-4569-b512-6a27bd332c56
+	fromColumn: fact_production.date
+	toColumn: dim_date.date
+
+relationship 426f3e7c-b4a8-4dc2-a896-be0e6b4d72ca
+	fromColumn: fact_production.machine_id
+	toColumn: dim_machine.machine_id
+
+relationship 50c138b3-a5bf-40da-9b52-73540c067012
+	fromColumn: fact_production.product_id
+	toColumn: dim_product.product_id
+
+relationship 76f52043-6c25-4d0f-9bdd-6766cc77eb12
+	fromColumn: fact_production.shift_id
+	toColumn: dim_shift.shift_id
+

@@ -1,0 +1,74 @@
+table dim_date
+	lineageTag: 82370b4f-c62e-41c1-80af-abbd94a5112b
+	dataCategory: Time
+
+	column date
+		dataType: dateTime
+		isKey
+		formatString: dd-mmm-yyyy
+		lineageTag: 2404797c-8ab3-4936-a692-45a16b0c6372
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: d2ebf019-08d4-4606-aa04-64462642cb23
+		summarizeBy: none
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarter_name
+		dataType: string
+		lineageTag: bd3bb082-d1fe-448c-ad09-0a5b9baf52d8
+		summarizeBy: none
+		sourceColumn: quarter_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5f2f45da-2451-4e2d-b008-d1ad11798e17
+		summarizeBy: none
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_name
+		dataType: string
+		lineageTag: f223e53b-7d83-41fc-b1f8-ff7c64381ef6
+		summarizeBy: none
+		sourceColumn: month_name
+		sortByColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_short
+		dataType: string
+		lineageTag: 60ecb685-aebb-4db9-a5fe-2e1b10c41faf
+		summarizeBy: none
+		sourceColumn: month_short
+		sortByColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_date = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "dim_date.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Promoted Headers", {"date", "year", "quarter_name", "month", "month_name", "month_short"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns", {{"date", type date}, {"year", Int64.Type}, {"quarter_name", type text}, {"month", Int64.Type}, {"month_name", type text}, {"month_short", type text}}, "en-US")
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

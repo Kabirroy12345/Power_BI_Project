@@ -1,0 +1,49 @@
+table dim_machine
+	lineageTag: fc7bda87-6068-49f4-a864-956f0bdfcefb
+
+	column machine_id
+		dataType: string
+		isKey
+		lineageTag: e78ae8f5-e27f-49b1-8e85-fee0eacc1bea
+		summarizeBy: none
+		sourceColumn: machine_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column machine_type
+		dataType: string
+		lineageTag: e5429d6a-934b-463c-878b-57666a7c975b
+		summarizeBy: none
+		sourceColumn: machine_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column production_line
+		dataType: string
+		lineageTag: 5b913ad2-f8b2-4a56-9427-adebcaaae66f
+		summarizeBy: none
+		sourceColumn: production_line
+
+		annotation SummarizationSetBy = Automatic
+
+	column manufacturer
+		dataType: string
+		lineageTag: 4559f87c-1a77-476a-903a-3a6820aebcd4
+		summarizeBy: none
+		sourceColumn: manufacturer
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_machine = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "dim_machine.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Promoted Headers", {"machine_id", "machine_type", "production_line", "manufacturer"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns", {{"machine_id", type text}, {"machine_type", type text}, {"production_line", type text}, {"manufacturer", type text}}, "en-US")
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "OEE_Dashboard_Simple"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "31afd963-ba06-473a-b962-3ccc306e8c96"
+  }
+}
